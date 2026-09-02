@@ -1,0 +1,385 @@
+/* 공통 타이틀 */
+.about-me .tit,
+.projects .tit,
+.contact .tit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    color: #CD3131;
+    margin-bottom: 8rem;
+}
+.about-me .tit i,
+.projects .tit i,
+.contact .tit i {
+    font-size: 1.2rem;
+}
+.container {
+    width: 144rem;
+    margin: 0 auto;
+}
+section {
+    padding: 8rem 0;
+    width: 100%;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* main */
+.hero header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero header .gnb ul {
+    display: flex;
+    gap: 10rem;
+    padding-top: 4rem;
+}
+.hero header .gnb li {
+    position: relative;
+}
+.hero header .gnb li a {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.hero header .gnb .on {
+    color: #CD3131;
+}
+.hero header .gnb .on:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.5rem;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: #CD3131;
+    transform: translate(-50%);
+}
+/* #header */
+
+/* main */
+.hero {
+    width: 100%;
+    height: 88rem;
+    padding: 0;
+    background: url(../Img/main.jpg) no-repeat center/cover;
+    position: relative;
+}
+.hero .text-area {
+    padding-left: 10rem;
+    padding-top: 22rem;
+}
+.hero .text-area p {
+    font-weight: 500;
+}
+.hero .text-area .caption {
+    color: #CD3131;
+    margin-left: 0.4rem;
+    margin-bottom: 1rem;
+}
+.hero .text-area h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: -1rem 0 1rem 0;
+}
+.hero .text-area span {
+    color: #CD3131;
+}
+.hero .text-area .desc {
+    color: #6E6250;
+}
+.hero .scroll {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    color: #CD3131;
+    position: absolute;
+    left: 50%;
+    top: 88%;
+    transform: translateX(-50%);
+}
+/* #main */
+
+/* aboutme */
+.about-me {
+    background-color: #F2E9CE;
+}
+.about-me .about-content {
+    display: flex;
+    align-items: stretch;
+    gap: 10rem;
+}
+.about-me .about-left {
+    width: 50rem;
+    flex-shrink: 0;
+}
+.about-me .about-right {
+    width: 82rem;
+    display: flex;
+    flex-direction: column;
+}
+.about-me .about-left .profile {
+    width: 50rem;
+    height: 52.4rem;
+    background-image: url(../Img/about-me.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;;
+}
+.about-me .about-left .profile-info {
+    width: 50rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.about-me .about-left .profile-info .profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.about-me .about-left .profile-info .profile-name .profile-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+.about-me .about-left .profile-info .profile-name strong {
+    font-size: 4rem;
+    font-weight: 600;
+}
+.about-me .about-left .profile-info .profile-name span {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #6E6250;
+}
+.about-me .about-left .profile-info .profile-name .profile-job {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #CD3131;
+}
+.about-me .about-left .profile-info .profile-name .profile-location {
+    font-weight: 500;
+    color: #6E6250;
+}
+
+.about-me .about-left .profile-info a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    gap: 0.8rem;
+    border-radius: 3rem;
+    background-color: #CD3131;
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 0.6rem 0 #A3211F;
+    transition: 0.2s;
+    margin-bottom: 0.6rem;
+}
+.about-me .about-left .profile-info .btn-resume:hover {
+    transform: translateY(0.3rem);
+    box-shadow: 0 0.1rem 0 #A91F1F;
+}
+.about-me .about-right h3 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 3rem;
+}
+.about-me .about-right .about-desc {
+    font-weight: 500;
+    color: #6E6250;
+    line-height: 1.5;
+    margin-top: 1.6rem;
+}
+.about-me .about-right .info-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 5rem;
+}
+.about-me .about-right .info-list .info-item .info-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #CD3131;
+    margin-bottom: 2rem;
+}
+.about-me .about-right .info-list .info-item .info-title p {
+    font-weight: 600;
+}
+.about-me .about-right .info-list .info-item .info-title i {
+    font-size: 0.8rem;
+}
+.about-me .about-right .info-list .info-item {
+    position: relative;
+}
+.about-me .about-right .info-list .info-item::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 1.7rem;
+    width: 1.5px;
+    height: 27rem;
+    background-color: #6E6250;
+}
+.about-me .about-right .info-list .info-item .info-detail {
+    margin-left: 2rem;
+}
+.about-me .about-right .info-list .info-item .info-detail .info-desc {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.about-me .about-right .info-list .info-item .info-detail .info-date {
+    font-weight: 400;
+    color: #6E6250;
+    margin-bottom: 3rem;
+}
+.about-me .about-right .skill {
+    margin-top: auto;
+}
+.about-me .about-right .skill p {
+    font-weight: 600;
+    color: #CD3131;
+}
+.about-me .about-right .skill .info-skill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #CD3131;
+    margin-bottom: 2rem;
+}
+.about-me .about-right .skill .info-skill i {
+    font-size: 0.8rem;
+}
+.about-me .skill ul {
+    display: grid;
+    grid-template-columns: repeat(4, 16rem);
+    column-gap: 2rem;
+    row-gap: 1.6rem;
+}
+.about-me .about-right .skill ul li {
+    width: 16rem;
+    height: 5.4rem;
+    background-color: #DFD1A0;
+    padding: 12px 20px;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+.about-me .skill li:hover {
+    transform: translateY(-0.5rem);
+    transition: 0.3s;
+}
+/* #aboutme */
+
+.projects {
+    background-color: #EAE0C0;
+}
+.projects .projects-content {
+    cursor: pointer;
+    display: flex;
+    gap: 2.4rem;
+    margin-bottom: 4rem;
+}
+.projects .projects-content .projects-wrap img {
+    border-radius: 2rem;
+}
+.projects .projects-content p {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.projects .projects-content .projects-wrap img:hover {
+    transition: transform 0.3s ease;
+    box-shadow: 0.3s ease;
+}
+.projects .projects-content .projects-wrap img:hover {
+    transform: scale(1.05);
+    transform: translateY(-0.6rem);
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.10);
+}
+.projects .projects-content .box:hover p {
+    color: #CD3131;
+}
+
+/* contact */
+.contact {
+    background-color: #F2E9CE;
+}
+.contact .tit {
+    margin-bottom: 4rem;
+}
+.contact .contact-title {
+    display: flex;
+    justify-content: center;
+    font-size: 5.6rem;
+    font-weight: 600;
+}
+.contact .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8rem;
+}
+.contact .contact-row .contact-link {
+    text-decoration: none;
+    color: inherit;
+}
+.contact .contact-row .contact-how {
+    width: 46.4rem;
+    height: 26rem;
+    background-color: #FBF6E6;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.contact .contact-row .contact-how:hover {
+    transform: translateY(-1rem);
+    
+}
+.contact .contact-row .contact-how p {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #6E6250;
+}
+.contact .contact-row .contact-how span {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+.contact .btn-up {
+    width: 5rem;
+    height: 5rem;
+    background-color: #FBF6E6;
+    box-shadow: 0 0.3rem 0 #C9B98A;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 60px;
+    bottom: 50px;
+    z-index: 1000;
+}
+.contact .btn-up:hover {
+    transform: translateY(0.3rem);
+    box-shadow: 0 0.1rem 0 #C9B98A;
+}
