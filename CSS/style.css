@@ -181,7 +181,7 @@ html {
     font-size: 2.4rem;
     font-weight: 700;
     white-space: nowrap;
-    box-shadow: 0 0.6rem 0 #A3211F;
+    box-shadow: 0 0.8rem 0 #A3211F;
     transition: 0.2s;
     margin-bottom: 0.6rem;
 }
@@ -367,8 +367,8 @@ html {
 .contact .btn-up {
     width: 5rem;
     height: 5rem;
-    background-color: #FBF6E6;
-    box-shadow: 0 0.3rem 0 #C9B98A;
+    background-color: #C9B98A;
+    box-shadow: 0 0.6rem 0 #000;
     border-radius: 50%;
     display: flex;
     justify-content: center;
