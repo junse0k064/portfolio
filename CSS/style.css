@@ -465,9 +465,10 @@ html {
     right: 60px;
     bottom: 50px;
     z-index: 1000;
+    transition: all 0.15s ease;
 }
-.contact .btn-up:hover {
-    transform: translateY(0.3rem);
+.contact .btn-up:active {
+    transform: translateY(0.5rem);
     box-shadow: 0 0.1rem 0 #C9B98A;
 }
 
