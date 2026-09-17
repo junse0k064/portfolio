@@ -7,7 +7,7 @@
     justify-content: center;
     gap: 1.6rem;
     color: #CD3131;
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
 }
 .about-me .tit i,
 .projects .tit i,
@@ -286,13 +286,22 @@ html {
 .projects {
     background-color: #EAE0C0;
 }
+.projects .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 .projects .projects-content {
     cursor: pointer;
-    display: flex;
-    gap: 2.4rem;
-    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
 }
 .projects .projects-content .projects-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
     border-radius: 2rem;
 }
 .projects .projects-content p {
@@ -383,3 +392,7 @@ html {
     transform: translateY(0.3rem);
     box-shadow: 0 0.1rem 0 #C9B98A;
 }
+
+
+/* 반응형 */
+
