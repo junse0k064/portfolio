@@ -121,9 +121,7 @@ html {
     width: 1440px;
     min-height: 700px;
     margin: 0 auto;
-
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,6 +177,25 @@ html {
 .profile-text p {
     font-weight: 500;
     color: #6E6250;
+}
+.about-profile .resume {
+    width: 34rem;
+    height: 6rem;
+    border-radius: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: #CD3131;
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: 0 0.6rem 0 #A3211F;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.about-profile .resume:active {
+    transform: translateY(0.5rem);
+    box-shadow: 0 0.1rem 0 #9F2222;
 }
 
 
