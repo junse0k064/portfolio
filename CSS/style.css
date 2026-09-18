@@ -46,18 +46,8 @@ html {
     font-size: 2rem;
     font-weight: 600;
 }
-.hero header .gnb .on {
+.hero header .gnb li:hover {
     color: #CD3131;
-}
-.hero header .gnb .on:hover::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -0.5rem;
-    width: 2rem;
-    height: 0.3rem;
-    background-color: #CD3131;
-    transform: translate(-50%);
 }
 /* #header */
 
