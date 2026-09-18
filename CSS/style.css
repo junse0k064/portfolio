@@ -1,3 +1,4 @@
+
 /* 공통 타이틀 */
 .about-me .tit,
 .projects .tit,
@@ -7,7 +8,7 @@
     justify-content: center;
     gap: 1.6rem;
     color: #CD3131;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
 }
 .about-me .tit i,
 .projects .tit i,
@@ -46,8 +47,18 @@ html {
     font-size: 2rem;
     font-weight: 600;
 }
-.hero header .gnb li:hover {
+.hero header .gnb .on {
     color: #CD3131;
+}
+.hero header .gnb .on:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.5rem;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: #CD3131;
+    transform: translate(-50%);
 }
 /* #header */
 
@@ -98,278 +109,191 @@ html {
 /* #main */
 
 /* aboutme */
-
 .about-me {
-    width: 100%;
-    min-height: 900px;
-    padding: 100px 0;
-    background: #F2E9CE;
-    overflow: hidden;
+    background-color: #F2E9CE;
 }
-
-.about-inner {
-    width: 1440px;
-    min-height: 700px;
-    margin: 0 auto;
-    position: relative;
+.about-me .about-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    gap: 10rem;
 }
-
-
-/* =========================================
-   PROFILE
-   ========================================= */
-
-.about-profile {
-    width: 400px;
-
-    position: relative;
-    z-index: 3;
-
-    margin-right: -30px;
+.about-me .about-left {
+    width: 50rem;
+    flex-shrink: 0;
 }
-
-.profile-frame {
-    width: 340px;
-    height: 380px;
-
-    position: relative;
-}
-
-.about-profile .profile {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    border-radius: 30px;
-}
-
-/* 프로필 텍스트 */
-
-.profile-text {
-    margin: 2rem 0 1rem 0;
-}
-.profile-text strong {
-    font-size: 3rem;
-    font-weight: 700;
-}
-.profile-text span {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #CD3131;
-}
-.profile-text p {
-    font-weight: 500;
-    color: #6E6250;
-}
-.about-profile .resume {
-    width: 34rem;
-    height: 6rem;
-    border-radius: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
-    background-color: #CD3131;
-    font-size: 2rem;
-    color: #fff;
-    box-shadow: 0 0.6rem 0 #A3211F;
-    cursor: pointer;
-    transition: all 0.15s ease;
-}
-.about-profile .resume:active {
-    transform: translateY(0.5rem);
-    box-shadow: 0 0.1rem 0 #9F2222;
-}
-
-
-/* =========================================
-   INFORMATION CARD
-   ========================================= */
-
-.about-info-card {
-    width: 500px;
-    min-height: 630px;
-
-    padding: 40px 45px;
-
-    box-sizing: border-box;
-
-    background: #DFD1A0;
-
-    border-radius: 30px;
-
-    position: relative;
-    z-index: 1;
-}
-
-
-/* 제목 */
-
-.about-card-title {
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-
-    border-bottom: 1px dashed #222226;
-}
-
-.about-card-title i {
-    font-size: 7px;
-
-    color: #CD3131;
-}
-
-.about-card-title h3 {
-    font-size: 22px;
-    font-weight: 700;
-
-    color: #222226;
-}
-
-
-/* 각각의 정보 */
-
-.info-block {
-    margin-bottom: 35px;
-}
-
-.info-block:last-child {
-    margin-bottom: 0;
-}
-
-
-/* ABOUT 설명 */
-
-.about-card-desc {
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 500;
-
-    color: #222226;
-}
-
-
-/* Education / Career / Certification */
-
-.info-content {
+.about-me .about-right {
+    width: 82rem;
     display: flex;
     flex-direction: column;
-
-    gap: 4px;
-
-    margin-bottom: 18px;
 }
-
-.info-content:last-child {
-    margin-bottom: 0;
+.about-me .about-left .profile {
+    width: 50rem;
+    height: 52.4rem;
+    background-image: url(../Img/about-me.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;;
 }
-
-.info-content strong {
-    font-size: 16px;
+.about-me .about-left .profile-info {
+    width: 50rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.about-me .about-left .profile-info .profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.about-me .about-left .profile-info .profile-name .profile-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+.about-me .about-left .profile-info .profile-name strong {
+    font-size: 4rem;
     font-weight: 600;
-
-    color: #222226;
 }
-
-.info-content span {
-    font-size: 14px;
-
+.about-me .about-left .profile-info .profile-name span {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #6E6250;
+}
+.about-me .about-left .profile-info .profile-name .profile-job {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #CD3131;
+}
+.about-me .about-left .profile-info .profile-name .profile-location {
+    font-weight: 500;
     color: #6E6250;
 }
 
-
-/* =========================================
-   SKILL CARD
-   ========================================= */
-
-.skill-card {
-    width: auto;
-    min-height: 300px;
-    padding: 35px;
-    box-sizing: border-box;
-    background: #CD3131;
-    border-radius: 30px;
-    z-index: 4;
-    margin-left: -60px;
-    margin-top: 200px;
-}
-
-/* Skill 제목 */
-
-.skill-card-title {
+.about-me .about-left .profile-info a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed #fff;
-}
-
-.skill-card-title i {
-    font-size: 7px;
+    justify-content: center;
+    padding: 16px 24px;
+    gap: 0.8rem;
+    border-radius: 3rem;
+    background-color: #CD3131;
     color: #fff;
-}
-.skill-card-title h3 {
-    font-size: 22px;
+    font-size: 2.4rem;
     font-weight: 700;
-    color: #fff;
+    white-space: nowrap;
+    box-shadow: 0 0.8rem 0 #A3211F;
+    transition: 0.2s;
+    margin-bottom: 0.6rem;
 }
-
-/* Skill Bar */
+.about-me .about-left .profile-info .btn-resume:hover {
+    transform: translateY(0.3rem);
+    box-shadow: 0 0.1rem 0 #A91F1F;
+}
+.about-me .about-right h3 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 3rem;
+}
+.about-me .about-right .about-desc {
+    font-weight: 500;
+    color: #6E6250;
+    line-height: 1.5;
+    margin-top: 1.6rem;
+}
+.about-me .about-right .info-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 5rem;
+}
+.about-me .about-right .info-list .info-item .info-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #CD3131;
+    margin-bottom: 2rem;
+}
+.about-me .about-right .info-list .info-item .info-title p {
+    font-weight: 600;
+}
+.about-me .about-right .info-list .info-item .info-title i {
+    font-size: 0.8rem;
+}
+.about-me .about-right .info-list .info-item {
+    position: relative;
+}
+.about-me .about-right .info-list .info-item::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 1.7rem;
+    width: 1.5px;
+    height: 27rem;
+    background-color: #6E6250;
+}
+.about-me .about-right .info-list .info-item .info-detail {
+    margin-left: 2rem;
+}
+.about-me .about-right .info-list .info-item .info-detail .info-desc {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.about-me .about-right .info-list .info-item .info-detail .info-date {
+    font-weight: 400;
+    color: #6E6250;
+    margin-bottom: 3rem;
+}
+.about-me .about-right .skill {
+    margin-top: auto;
+}
+.about-me .about-right .skill p {
+    font-weight: 600;
+    color: #CD3131;
+}
+.about-me .about-right .skill .info-skill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #CD3131;
+    margin-bottom: 2rem;
+}
+.about-me .about-right .skill .info-skill i {
+    font-size: 0.8rem;
+}
 .about-me .skill ul {
     display: grid;
-    grid-template-columns: repeat(2, 16rem);
+    grid-template-columns: repeat(4, 16rem);
     column-gap: 2rem;
     row-gap: 1.6rem;
-    justify-content: center;
 }
-
-.about-me .skill ul li {
-    background-color: #F5EEDB;
-    padding: 8px 0;
+.about-me .about-right .skill ul li {
+    width: 16rem;
+    height: 5.4rem;
+    background-color: #DFD1A0;
+    padding: 12px 20px;
     border-radius: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    box-sizing: border-box;
 }
-.about-me .skill ul li span {
-    font-weight: 600;
+.about-me .skill li:hover {
+    transform: translateY(-0.5rem);
+    transition: 0.3s;
 }
-
 /* #aboutme */
 
 .projects {
     background-color: #EAE0C0;
 }
-.projects .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
 .projects .projects-content {
     cursor: pointer;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6rem;
+    display: flex;
+    gap: 2.4rem;
+    margin-bottom: 4rem;
 }
 .projects .projects-content .projects-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
     border-radius: 2rem;
 }
 .projects .projects-content p {
@@ -455,10 +379,8 @@ html {
     right: 60px;
     bottom: 50px;
     z-index: 1000;
-    transition: all 0.15s ease;
 }
-.contact .btn-up:active {
-    transform: translateY(0.5rem);
+.contact .btn-up:hover {
+    transform: translateY(0.3rem);
     box-shadow: 0 0.1rem 0 #C9B98A;
 }
-
