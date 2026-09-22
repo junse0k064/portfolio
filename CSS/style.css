@@ -1,4 +1,3 @@
-
 /* 공통 타이틀 */
 .about-me .tit,
 .projects .tit,
@@ -8,7 +7,7 @@
     justify-content: center;
     gap: 1.6rem;
     color: #CD3131;
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
 }
 .about-me .tit i,
 .projects .tit i,
@@ -16,7 +15,7 @@
     font-size: 1.2rem;
 }
 .container {
-    width: 144rem;
+    width: min(144rem, calc(100% - 8rem));
     margin: 0 auto;
 }
 section {
@@ -47,7 +46,7 @@ html {
     font-size: 2rem;
     font-weight: 600;
 }
-.hero header .gnb .on {
+.hero header .gnb li:hover {
     color: #CD3131;
 }
 .hero header .gnb .on:hover::after {
@@ -67,7 +66,7 @@ html {
     width: 100%;
     height: 88rem;
     padding: 0;
-    background: url(../Img/main.jpg) no-repeat center/cover;
+    background: url(../img/main.jpg) no-repeat center/cover;
     position: relative;
 }
 .hero .text-area {
@@ -113,29 +112,31 @@ html {
     background-color: #F2E9CE;
 }
 .about-me .about-content {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 50rem minmax(0, 1fr);
     gap: 10rem;
+    align-items: stretch;
 }
 .about-me .about-left {
-    width: 50rem;
-    flex-shrink: 0;
+    width: 100%;
+    min-width: 0;
 }
 .about-me .about-right {
-    width: 82rem;
+    width: 100%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
 }
 .about-me .about-left .profile {
-    width: 50rem;
-    height: 52.4rem;
-    background-image: url(../Img/about-me.jpg);
+    width: 100%;
+    aspect-ratio: 5 / 6;
+    background-image: url(../img/about-me.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;;
 }
 .about-me .about-left .profile-info {
-    width: 50rem;
+    width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -152,16 +153,16 @@ html {
     gap: 0.6rem;
 }
 .about-me .about-left .profile-info .profile-name strong {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 600;
 }
 .about-me .about-left .profile-info .profile-name span {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #6E6250;
 }
 .about-me .about-left .profile-info .profile-name .profile-job {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 600;
     color: #CD3131;
 }
@@ -203,7 +204,7 @@ html {
 }
 .about-me .about-right .info-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     margin-top: 5rem;
 }
@@ -227,22 +228,31 @@ html {
     content: "";
     position: absolute;
     left: 0.45rem;
-    top: 1.7rem;
-    width: 1.5px;
+    top: 1.4rem;
+    width: 1px;
     height: 27rem;
     background-color: #6E6250;
 }
 .about-me .about-right .info-list .info-item .info-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     margin-left: 2rem;
 }
 .about-me .about-right .info-list .info-item .info-detail .info-desc {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
+}
+.about-me .about-right .info-list .info-item .info-detail small {
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 .about-me .about-right .info-list .info-item .info-detail .info-date {
-    font-weight: 400;
+    font-weight: 500;
     color: #6E6250;
-    margin-bottom: 3rem;
 }
 .about-me .about-right .skill {
     margin-top: auto;
@@ -277,6 +287,7 @@ html {
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
+    font-weight: 600;
 }
 .about-me .skill li:hover {
     transform: translateY(-0.5rem);
@@ -289,11 +300,16 @@ html {
 }
 .projects .projects-content {
     cursor: pointer;
-    display: flex;
-    gap: 2.4rem;
-    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+    width: min(100%, 144rem);
+    margin: 0 auto 6rem;
 }
 .projects .projects-content .projects-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
     border-radius: 2rem;
 }
 .projects .projects-content p {
@@ -301,15 +317,18 @@ html {
     margin-top: 2rem;
     font-size: 2rem;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 .projects .projects-content .projects-wrap img:hover {
     transition: transform 0.3s ease;
     box-shadow: 0.3s ease;
 }
 .projects .projects-content .projects-wrap img:hover {
-    transform: scale(1.05);
-    transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem) scale(1.05);
     box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.10);
+}
+.projects .projects-content .projects-wrap p {
+    transition: color 0.3s ease;
 }
 .projects .projects-content .box:hover p {
     color: #CD3131;
@@ -354,7 +373,7 @@ html {
 }
 .contact .contact-row .contact-how:hover {
     transform: translateY(-1rem);
-    
+
 }
 .contact .contact-row .contact-how p {
     font-size: 2.4rem;
@@ -383,4 +402,349 @@ html {
 .contact .btn-up:hover {
     transform: translateY(0.3rem);
     box-shadow: 0 0.1rem 0 #C9B98A;
+}
+
+
+/* 반응형 */
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   768px ~ 1439px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+
+
+    /* =====================================================
+       ABOUT ME
+       PC 레이아웃 그대로 유지 + 전체 비율 축소
+       ===================================================== */
+
+    .about-me .about-content {
+        width: 136rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        zoom: clamp(
+            0.5,
+            calc((100vw - 8rem) / 136rem),
+            1
+        );
+    }
+
+
+    /* =====================================================
+       PROJECTS
+       태블릿에서도 3열 유지
+       ===================================================== */
+
+    .projects .projects-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 4rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projects .projects-content .box {
+        min-width: 0;
+    }
+
+    .projects .projects-content .projects-wrap {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 2rem;
+    }
+
+    .projects .projects-content .projects-wrap img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        border-radius: 2rem;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       태블릿에서도 3열 유지
+       ===================================================== */
+    .contact .contact-title p {
+        font-size: 3.2rem;
+    }
+    
+    .contact .contact-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .contact .contact-row .contact-how {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+    .contact .contact-row .contact-how img {
+    width: 6rem;
+    height: auto;
+}
+    .contact .contact-row .contact-how p {
+        font-size: 2rem;
+    }
+    .contact .contact-row .contact-how span {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ~767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+
+    /* =====================================================
+       COMMON
+       ===================================================== */
+
+    .container {
+        width: calc(100% - 4rem);
+    }
+
+    section {
+        padding: 6rem 0;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .hero header .gnb ul {
+        gap: 3rem;
+        padding-top: 3rem;
+    }
+
+    .hero header .gnb li a {
+        font-size: 1.6rem;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        height: 70rem;
+    }
+
+    .hero .text-area {
+        padding-left: 0;
+        padding-top: 18rem;
+    }
+
+    .hero .text-area h1 {
+        font-size: 3.6rem;
+    }
+
+    .hero .scroll {
+        top: 88%;
+    }
+
+
+    /* =====================================================
+       ABOUT ME
+       모바일에서만 1열
+       ===================================================== */
+
+    .about-me .about-content {
+        width: 100%;
+        zoom: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .about-me .about-left,
+    .about-me .about-right {
+        width: 100%;
+    }
+
+
+    /* ----- Profile ----- */
+
+    .about-me .about-left .profile {
+        width: 100%;
+    }
+
+    .about-me .about-left .profile-info {
+        align-items: flex-end;
+    }
+
+    .about-me .about-left .profile-info .profile-name strong {
+        font-size: 3rem;
+    }
+
+    .about-me .about-left .profile-info .profile-name span {
+        font-size: 1.8rem;
+    }
+
+    .about-me .about-left .profile-info .profile-name .profile-job {
+        font-size: 1.8rem;
+    }
+
+    .about-me .about-left .profile-info a {
+        padding: 1.2rem 1.8rem;
+        font-size: 1.6rem;
+    }
+
+
+    /* ----- About Text ----- */
+
+    .about-me .about-right h3 {
+        font-size: 2.4rem;
+        line-height: 1.4;
+    }
+
+    .about-me .about-right .about-desc {
+        font-size: 1.6rem;
+    }
+
+
+    /* ----- 학력 / 경력 ----- */
+
+    .about-me .about-right .info-list {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        margin-top: 4rem;
+    }
+
+    .about-me .about-right .info-list .info-item::before {
+        height: 100%;
+    }
+
+    .about-me .about-right .info-list .info-item .info-detail .info-desc {
+        font-size: 1.6rem;
+    }
+
+
+    /* ----- Skill
+       경력 → 스킬 간격을
+       학력 → 경력과 동일하게 4rem
+    ----- */
+
+    .about-me .about-right .skill {
+        margin-top: 4rem;
+    }
+
+    .about-me .skill ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .about-me .about-right .skill ul li {
+        width: 100%;
+        height: 4.8rem;
+        font-size: 1.4rem;
+    }
+
+
+    /* =====================================================
+       PROJECTS
+       모바일 1열
+       ===================================================== */
+
+    .projects .projects-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projects .projects-content .box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .projects .projects-content .projects-wrap {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 2rem;
+    }
+
+    .projects .projects-content .projects-wrap img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        border-radius: 2rem;
+    }
+
+    .projects .projects-content p {
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+
+    /* =====================================================
+       TOP BUTTON
+       ===================================================== */
+
+    .contact .contact-title {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    .contact .contact-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 3.2rem;
+        margin-top: 4rem;
+    }
+
+    .contact .contact-row .contact-how {
+        width: 70%;
+        height: 13rem;
+        gap: 0.6rem;
+    }
+
+    /* 박스 안 이미지 */
+    .contact .contact-row .contact-how img {
+        width: 4rem;
+        height: auto;
+    }
+
+    /* 설명 텍스트 */
+    .contact .contact-row .contact-how p {
+        font-size: 1.4rem;
+    }
+
+    /* 전화번호 / 이메일 / 오픈채팅 */
+    .contact .contact-row .contact-how span {
+        font-size: 1.7rem;
+    }
+
+    /* TOP BUTTON */
+    .contact .btn-up {
+        width: 4.5rem;
+        height: 4.5rem;
+        right: 2rem;
+        bottom: 2rem;
+    }
 }
