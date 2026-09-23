@@ -295,44 +295,59 @@ html {
 }
 /* #aboutme */
 
+
+
 .projects {
     background-color: #EAE0C0;
 }
-.projects .projects-content {
-    cursor: pointer;
+
+
+/* 프로젝트 목록 */
+.projects .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6rem;
-    width: min(100%, 144rem);
-    margin: 0 auto 6rem;
 }
-.projects .projects-content .projects-wrap img {
-    max-width: 100%;
-    max-height: 100%;
+
+/* 프로젝트 */
+.projects .list {
+    cursor: pointer;
+}
+
+/* 이미지 */
+.projects .list .img-thumb img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 2rem;
 }
-.projects .projects-content p {
+
+/* 프로젝트 제목 */
+.projects .list .text-area h3 {
     text-align: center;
     margin-top: 2rem;
     font-size: 2rem;
     font-weight: 600;
     transition: color 0.3s ease;
 }
-.projects .projects-content .projects-wrap img:hover {
-    transition: transform 0.3s ease;
-    box-shadow: 0.3s ease;
+
+/* 이미지 호버 */
+.projects .list .img-thumb img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.projects .projects-content .projects-wrap img:hover {
+
+.projects .list:hover .img-thumb img {
     transform: translateY(-0.6rem) scale(1.05);
     box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.10);
 }
-.projects .projects-content .projects-wrap p {
-    transition: color 0.3s ease;
-}
-.projects .projects-content .box:hover p {
+
+.projects .list:hover .text-area h3 {
     color: #CD3131;
 }
+
+
+
+
 
 /* contact */
 .contact {
@@ -405,6 +420,10 @@ html {
 }
 
 
+
+
+
+
 /* 반응형 */
 
 
@@ -444,33 +463,34 @@ html {
        태블릿에서도 3열 유지
        ===================================================== */
 
-    .projects .projects-content {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 4rem;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .projects .container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+}
 
-    .projects .projects-content .box {
-        min-width: 0;
-    }
+.projects .list {
+    min-width: 0;
+}
 
-    .projects .projects-content .projects-wrap {
-        width: 100%;
-        overflow: hidden;
-        border-radius: 2rem;
-    }
+.projects .list .img-thumb {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+}
 
-    .projects .projects-content .projects-wrap img {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-width: none;
-        max-height: none;
-        object-fit: contain;
-        border-radius: 2rem;
-    }
+.projects .list .img-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.projects .list .text-area h3 {
+    margin-top: 1.6rem;
+    font-size: 1.8rem;
+}
 
 
     /* =====================================================
@@ -666,40 +686,36 @@ html {
        모바일 1열
        ===================================================== */
 
-    .projects .projects-content {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .projects .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
 
-    .projects .projects-content .box {
-        width: 100%;
-        min-width: 0;
-    }
+.projects .list {
+    width: 100%;
+    min-width: 0;
+}
 
-    .projects .projects-content .projects-wrap {
-        width: 80%;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 2rem;
-    }
+.projects .list .img-thumb {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 2rem;
+}
 
-    .projects .projects-content .projects-wrap img {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-width: none;
-        max-height: none;
-        object-fit: contain;
-        border-radius: 2rem;
-    }
+.projects .list .img-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2rem;
+}
 
-    .projects .projects-content p {
-        font-size: 1.8rem;
-        margin-top: 1.5rem;
-    }
+.projects .list .text-area h3 {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+}
 
 
     /* =====================================================
