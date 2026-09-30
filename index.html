@@ -8,6 +8,52 @@
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/195e39de43.js" crossorigin="anonymous"></script>
+
+    <style>
+        .modal-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 100px 20px;
+            overflow-y: auto;
+        }
+        .modal-con {
+            background-color: #fff;
+            padding: 100px 40px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .modal-wrap .btn-close {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+        }
+        .modal-link a {
+            display: block;
+            width: 160px;
+            line-height: 60px;
+            background-color: #eee;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+
+        /* 제이쿼리 */
+        .modal-wrap {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!--main-->
@@ -184,9 +230,33 @@
                 </article>
                 <article class="list">
                     <a href="./img/detail03.jpg">
-                        <div class="img-thumb"><img src="./Img/projects2.jpg" alt=""></div>
+                        <div class="img-thumb"><img src="./Img/projects3.jpg" alt=""></div>
                         <div class="text-area">
                             <h3>project3</h3>
+                        </div>
+                    </a>
+                </article>
+                <article class="list">
+                    <a href="./img/detail01.jpg">
+                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="text-area">
+                            <h3>project1</h3>
+                        </div>
+                    </a>
+                </article>
+                <article class="list">
+                    <a href="./img/detail01.jpg">
+                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="text-area">
+                            <h3>project1</h3>
+                        </div>
+                    </a>
+                </article>
+                <article class="list">
+                    <a href="./img/detail01.jpg">
+                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="text-area">
+                            <h3>project1</h3>
                         </div>
                     </a>
                 </article>
@@ -228,6 +298,63 @@
         </section>
         <!--#contact-->
 
+
+
+
+
+        <!-- 모달팝업 -->
+    <div class="modal-wrap">
+        <button type="button" class="btn-close">닫기</button>
+
+        <div class="modal-con">
+            <div class="modal-link">
+                <a href=" https://www.hilowave.co.kr/" target="_blank">웹사이트로 연결</a>
+            </div>
+            <img src="./img/detail01.jpg" alt="">
+        </div>
+    </div>
+    <!-- //모달팝업 -->
+
+
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.list').click(function(e){
+                e.preventDefault(); // a 태그의 기본 이벤트 삭제
+                // 모달팝업 보이기
+                $('.modal-wrap').fadeIn(200);
+
+
+                // 상세페이지 변경
+                let details = $(this).find('a').attr('href');
+                // console.log(details);
+                $('.modal-con img').attr({'src': details});
+
+
+                // data-link 속성이 있는지 없는지 판단
+                let links = $(this).find('a').attr('data-link');
+                console.log(links);
+                if (links) {
+                    //data-link 속성이 "있다면"
+                    $('.modal-link a').show().attr('href', links)
+                } else
+                {   
+                    //data-link 속성이 "없다면"
+                    $('.modal-link a').hide()
+                }
+            });
+
+
+            // 모달팝업 닫기
+            $('.btn-close').click(function(){
+                $('.modal-wrap').fadeOut(200, function(){
+                    $('.modal-con img').attr('src', '')
+                });
+            });
+
+        });
+    </script>
     </main>
 </body>
 </html>
