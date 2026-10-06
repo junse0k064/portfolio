@@ -1,0 +1,43 @@
+.modal-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 100px 20px;
+            overflow-y: auto;
+        }
+        .modal-con {
+            background-color: #fff;
+            padding: 100px 40px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .modal-wrap .btn-close {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+        }
+        .modal-link a {
+            display: block;
+            width: 160px;
+            line-height: 60px;
+            background-color: #eee;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+
+        /* 제이쿼리 */
+        .modal-wrap {
+            display: none;
+        }

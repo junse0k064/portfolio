@@ -19,8 +19,11 @@
     margin: 0 auto;
 }
 section {
-    padding: 8rem 0;
+    padding: 10rem 0 8rem;
     width: 100%;
+}
+.contact {
+    height: 919px;
 }
 html {
     scroll-behavior: smooth;
@@ -28,28 +31,34 @@ html {
 
 
 /* main */
-.hero header {
+
+header {
     width: 100%;
+    height: 6rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background-color: #fff;
 }
-.hero header .gnb ul {
+header .gnb ul {
     display: flex;
     gap: 10rem;
-    padding-top: 4rem;
 }
-.hero header .gnb li {
-    position: relative;
-}
-.hero header .gnb li a {
+header .gnb li a {
     font-size: 2rem;
     font-weight: 600;
 }
-.hero header .gnb li:hover {
+header .gnb li:hover {
     color: #CD3131;
 }
-.hero header .gnb .on:hover::after {
+header .gnb .on:hover::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -71,7 +80,7 @@ html {
 }
 .hero .text-area {
     padding-left: 10rem;
-    padding-top: 22rem;
+    padding-top: 30rem;
 }
 .hero .text-area p {
     font-weight: 500;
@@ -218,6 +227,9 @@ html {
 .about-me .about-right .info-list .info-item .info-title p {
     font-weight: 600;
 }
+.about-me .about-right .info-list .info-item .info-title .fa-circle {
+    z-index: 1000000;
+}
 .about-me .about-right .info-list .info-item .info-title i {
     font-size: 0.8rem;
 }
@@ -227,11 +239,11 @@ html {
 .about-me .about-right .info-list .info-item::before {
     content: "";
     position: absolute;
-    left: 0.45rem;
+    left: 0.5rem;
     top: 1.4rem;
     width: 1px;
     height: 27rem;
-    background-color: #6E6250;
+    background-color: #D2C7A8;
 }
 .about-me .about-right .info-list .info-item .info-detail {
     display: flex;

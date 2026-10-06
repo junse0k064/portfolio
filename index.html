@@ -7,72 +7,27 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <script src="https://kit.fontawesome.com/195e39de43.js" crossorigin="anonymous"></script>
-
-    <style>
-        .modal-wrap {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 100px 20px;
-            overflow-y: auto;
-        }
-        .modal-con {
-            background-color: #fff;
-            padding: 100px 40px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .modal-wrap .btn-close {
-            position: fixed;
-            top: 50px;
-            right: 50px;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-        }
-        .modal-link a {
-            display: block;
-            width: 160px;
-            line-height: 60px;
-            background-color: #eee;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-
-        /* 제이쿼리 */
-        .modal-wrap {
-            display: none;
-        }
-    </style>
 </head>
 <body>
+    <header>
+        <nav class="gnb">
+            <ul>
+                <li><a href="#hero">홈</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#projects">프로젝트</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
     <!--main-->
     <main>
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-bg" aria-hidden="true"></div>
             <div class="hero-particles" aria-hidden="true"></div>
             <div class="hero-line hero-line-1" aria-hidden="true"></div>
             <div class="hero-line hero-line-2" aria-hidden="true"></div>
-            <header>
-                <nav class="gnb">
-                    <ul>
-                        <li><a href="#">홈</a></li>
-                        <li><a href="#">소개</a></li>
-                        <li><a href="#">프로젝트</a></li>
-                        <li><a href="#">연락처</a></li>
-                    </ul>
-                </nav>
-            </header>
             <div class="container">
                 <div class="text-area">
                     <p class="caption">UI/UX WEB DESIGNER PORTFOLIO</p>
@@ -92,7 +47,7 @@
         <!--#main-->
 
         <!--aboutme-->
-        <section class="about-me">
+        <section class="about-me" id="about">
             <div class="container">
                 <div class="tit">
                     <i class="fa-solid fa-circle"></i>
@@ -174,20 +129,20 @@
                             </div>
                             <ul>
                                 <li>
-                                    <img src="./img/skill1.png" alt="Figma">
-                                    <span>Figma</span>
+                                    <img src="./img/skill1.png" alt="Photoshop">
+                                    <span>Photoshop</span>
                                 </li>
                                 <li>
                                     <img src="./img/skill2.png" alt="Illustrator">
                                     <span>Illustrator</span>
                                 </li>
                                 <li>
-                                    <img src="./img/skill3.png" alt="Photoshop">
-                                    <span>Photoshop</span>
+                                    <img src="./img/skill3.png" alt="InDesign">
+                                    <span>InDesign</span>
                                 </li>
                                 <li>
-                                    <img src="./img/skill4.png" alt="InDesign">
-                                    <span>InDesign</span>
+                                    <img src="./img/skill4.png" alt="Figma">
+                                    <span>Figma</span>
                                 </li>
                                 <li>
                                     <img src="./img/skill5.png" alt="HTML">
@@ -198,7 +153,11 @@
                                     <span>CSS</span>
                                 </li>
                                 <li>
-                                    <img src="./img/skill7.png" alt="AI">
+                                    <img src="./img/skill7.png" alt="JavaScript">
+                                    <span>JavaScript</span>
+                                </li>
+                                <li>
+                                    <img src="./img/skill8.png" alt="AI">
                                     <span>AI</span>
                                 </li>
                             </ul>
@@ -322,7 +281,7 @@
         <!--#projects-->
 
         <!--contact-->
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <div class="tit">
                     <i class="fa-solid fa-circle"></i>
