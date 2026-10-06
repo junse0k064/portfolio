@@ -59,6 +59,10 @@
     <!--main-->
     <main>
         <section class="hero">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-particles" aria-hidden="true"></div>
+            <div class="hero-line hero-line-1" aria-hidden="true"></div>
+            <div class="hero-line hero-line-2" aria-hidden="true"></div>
             <header>
                 <nav class="gnb">
                     <ul>
@@ -206,60 +210,113 @@
         <!--#aboutme-->
 
         <!--projects-->
-        <section class="projects">
+        <section class="projects" id="projects">
             <div class="tit">
                 <i class="fa-solid fa-circle"></i>
                 <h2>PROJECTS</h2>
             </div>
+
             <div class="container">
+
                 <article class="list">
                     <a href="./img/detail01.jpg">
-                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="img-thumb">
+                            <img src="./img/projects1.jpg" alt="봄봄카페 SNS 배너">
+                        </div>
                         <div class="text-area">
-                            <h3>project1</h3>
+                            <h3>SNS Banner Design</h3>
                         </div>
                     </a>
                 </article>
+
                 <article class="list">
                     <a href="./img/detail02.jpg">
-                        <div class="img-thumb"><img src="./Img/projects2.jpg" alt=""></div>
+                        <div class="img-thumb">
+                            <img src="./img/projects2.jpg" alt="고로케 로고 디자인">
+                        </div>
                         <div class="text-area">
-                            <h3>project2</h3>
+                            <h3>Logo Design</h3>
                         </div>
                     </a>
                 </article>
+
                 <article class="list">
                     <a href="./img/detail03.jpg">
-                        <div class="img-thumb"><img src="./Img/projects3.jpg" alt=""></div>
+                        <div class="img-thumb">
+                            <img src="./img/projects3.jpg" alt="라운드랩 자작나무 선크림 상세페이지">
+                        </div>
                         <div class="text-area">
-                            <h3>project3</h3>
+                            <h3>Detail Page Design</h3>
                         </div>
                     </a>
                 </article>
+
                 <article class="list">
                     <a href="./img/detail01.jpg">
-                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="img-thumb">
+                            <img src="./img/projects4.jpg" alt="샤넬 포스터 디자인">
+                        </div>
                         <div class="text-area">
-                            <h3>project1</h3>
+                            <h3>Poster Design</h3>
                         </div>
                     </a>
                 </article>
+
                 <article class="list">
                     <a href="./img/detail01.jpg">
-                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="img-thumb">
+                            <img src="./img/projects1.jpg" alt="리플렛 디자인">
+                        </div>
                         <div class="text-area">
-                            <h3>project1</h3>
+                            <h3>Leaflet Design</h3>
                         </div>
                     </a>
                 </article>
+
                 <article class="list">
                     <a href="./img/detail01.jpg">
-                        <div class="img-thumb"><img src="./Img/projects1.jpg" alt=""></div>
+                        <div class="img-thumb">
+                            <img src="./img/projects6.jpg" alt="Beam 앱 리디자인">
+                        </div>
                         <div class="text-area">
-                            <h3>project1</h3>
+                            <h3>UI/UX APP ReDesign</h3>
                         </div>
                     </a>
                 </article>
+
+                <article class="list">
+                    <a href="./img/detail01.jpg">
+                        <div class="img-thumb">
+                            <img src="./img/projects7.jpg" alt="CGV 웹사이트 리뉴얼">
+                        </div>
+                        <div class="text-area">
+                            <h3>CGV Renewal</h3>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="list">
+                    <a href="./img/detail01.jpg">
+                        <div class="img-thumb">
+                            <img src="./img/projects8.jpg" alt="삼양식품 웹사이트 리뉴얼">
+                        </div>
+                        <div class="text-area">
+                            <h3>Samyang Foods Renewal</h3>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="list">
+                    <a href="./img/detail01.jpg">
+                        <div class="img-thumb">
+                            <img src="./img/projects9.jpg" alt="Cafe24 쇼핑몰">
+                        </div>
+                        <div class="text-area">
+                            <h3>Cafe24 Shopping Mall</h3>
+                        </div>
+                    </a>
+                </article>
+
             </div>
         </section>
         <!--#projects-->
@@ -319,6 +376,86 @@
 
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script>
+        /* HERO OPENING / PARALLAX */
+        document.addEventListener('DOMContentLoaded', function () {
+            const hero = document.querySelector('.hero');
+            const bg = document.querySelector('.hero-bg');
+            const particles = document.querySelector('.hero-particles');
+            const text = document.querySelector('.hero .text-area');
+            const lines = document.querySelectorAll('.hero-line');
+
+            if (!hero || !bg || !particles) return;
+
+            const count = window.innerWidth < 768 ? 18 : 34;
+
+            for (let i = 0; i < count; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'particle';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+                dot.style.setProperty('--delay', (Math.random() * 2.5).toFixed(2) + 's');
+                dot.style.setProperty('--duration', (3 + Math.random() * 4).toFixed(2) + 's');
+                dot.style.setProperty('--size', (2 + Math.random() * 4).toFixed(1) + 'px');
+                particles.appendChild(dot);
+            }
+
+            let targetX = 0, targetY = 0;
+            let currentX = 0, currentY = 0;
+
+            hero.addEventListener('mousemove', function (e) {
+                const rect = hero.getBoundingClientRect();
+                targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+                targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+            });
+
+            hero.addEventListener('mouseleave', function () {
+                targetX = 0;
+                targetY = 0;
+            });
+
+            function parallax() {
+                currentX += (targetX - currentX) * 0.06;
+                currentY += (targetY - currentY) * 0.06;
+
+                bg.style.transform =
+                    `scale(1.08) translate(${currentX * -12}px, ${currentY * -8}px)`;
+
+                text.style.transform =
+                    `translate(${currentX * 7}px, ${currentY * 5}px)`;
+
+                lines.forEach(function (line, index) {
+                    const depth = index === 0 ? 12 : -8;
+                    line.style.transform =
+                        `translate(${currentX * depth}px, ${currentY * depth}px)`;
+                });
+
+                requestAnimationFrame(parallax);
+            }
+
+            parallax();
+
+            let ticking = false;
+
+            function updateScroll() {
+                const rect = hero.getBoundingClientRect();
+                const progress = Math.max(0, Math.min(1, -rect.top / hero.offsetHeight));
+
+                bg.style.setProperty('--scroll-y', `${progress * 70}px`);
+                text.style.setProperty('--scroll-y', `${progress * -45}px`);
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    requestAnimationFrame(updateScroll);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            updateScroll();
+        });
+
         $(function(){
             $('.list').click(function(e){
                 e.preventDefault(); // a 태그의 기본 이벤트 삭제
