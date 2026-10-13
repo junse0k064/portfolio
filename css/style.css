@@ -75,23 +75,30 @@ header .gnb .on:hover::after {
     width: 100%;
     height: 88rem;
     padding: 0;
-    background: url(../img/visual.jpg) no-repeat center/cover;
+    background: url(../img/main.jpg) no-repeat center/cover;
     position: relative;
 }
+.hero .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .hero .text-area {
-    padding-left: 10rem;
-    padding-top: 30rem;
+    width: min(124rem, calc(100% - 8rem));
+    margin: 0 auto;
+    padding-top: 0;
 }
 .hero .text-area p {
     font-weight: 500;
 }
 .hero .text-area .caption {
     color: #CD3131;
-    margin-left: 0.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
 }
 .hero .text-area h1 {
-    font-size: 5.6rem;
+    font-size: 6.4rem;
     font-weight: 700;
     line-height: 1.35;
     margin: -1rem 0 1rem 0;
@@ -100,6 +107,7 @@ header .gnb .on:hover::after {
     color: #CD3131;
 }
 .hero .text-area .desc {
+    font-size: 2rem;
     color: #6E6250;
 }
 .hero .scroll {
@@ -119,95 +127,91 @@ header .gnb .on:hover::after {
 /* aboutme */
 
 .about-me .about-content {
-    display: grid;
-    grid-template-columns: 50rem minmax(0, 1fr);
-    gap: 10rem;
-    align-items: stretch;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .about-me .about-left {
-    width: 100%;
-    min-width: 0;
+    width: 44%;
+    position: relative;
 }
-.about-me .about-right {
+
+.about-me .profile {
     width: 100%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    background: url('../img/about.png') center / contain no-repeat;
 }
-.about-me .about-left .profile {
-    width: 100%;
-    aspect-ratio: 5 / 6;
-    background-image: url(../img/about-me.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;;
-}
-.about-me .about-left .profile-info {
-    width: 100%;
+.about-me .profile-info {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-top: 2rem;
+    padding: 0 40px 0 30px;
+    margin-top: -30px;
 }
-.about-me .about-left .profile-info .profile-name {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+.about-me .profile-name {
+    width: 45%;
 }
-.about-me .about-left .profile-info .profile-name .profile-title {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
+.about-me .profile-title strong {
+    font-size: 3rem;
 }
-.about-me .about-left .profile-info .profile-name strong {
-    font-size: 3.2rem;
+.about-me .profile-title span {
+    margin-left: .6rem;
+    color: #777;
+    font-size: 1.8rem;
+}
+.about-me .profile-job {
+    color: #e22e34;
+    font-size: 1.9rem;
     font-weight: 600;
 }
-.about-me .about-left .profile-info .profile-name span {
-    font-size: 2rem;
-    font-weight: 400;
-    color: #6E6250;
+.about-me .profile-location {
+    color: #888;
+    font-size: 1.5rem;
 }
-.about-me .about-left .profile-info .profile-name .profile-job {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #CD3131;
-}
-.about-me .about-left .profile-info .profile-name .profile-location {
-    font-weight: 500;
-    color: #6E6250;
-}
-
-.about-me .about-left .profile-info a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 24px;
-    gap: 0.8rem;
-    border-radius: 3rem;
-    background-color: #CD3131;
+.about-me .btn-resume {
+    display: inline-block;
+    padding: 1.7rem 2.2rem;
+    border-radius: 4rem;
+    background: linear-gradient(#e9363b,#cf262c);
     color: #fff;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    white-space: nowrap;
     box-shadow: 0 0.8rem 0 #A3211F;
     transition: 0.2s;
-    margin-bottom: 0.6rem;
+    margin-bottom: 8px;
 }
-.about-me .about-left .profile-info .btn-resume:hover {
+.about-me .btn-resume:hover {
     transform: translateY(0.3rem);
     box-shadow: 0 0.1rem 0 #A91F1F;
 }
-.about-me .about-right h3 {
-    font-size: 3.2rem;
-    font-weight: 600;
-    line-height: 3rem;
+
+.about-me .btn-resume i {
+    margin-right: .8rem;
 }
-.about-me .about-right .about-desc {
-    font-weight: 500;
-    color: #6E6250;
-    line-height: 1.5;
-    margin-top: 1.6rem;
+.about-me .btn-resume:hover {
+    transform: translateY(.3rem);
+    box-shadow: 0 .1rem 0 #a91f1f;
+}
+.about-me .about-right {
+    width: 48.5%;
+}
+.about-me h3 {
+    font-size: 3rem;
+    line-height: 1.45;
+    letter-spacing: -.12rem;
+}
+.about-me h3 span {
+    color: #ce3034;
+}
+.about-me .about-desc {
+    color: #777;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+}
+.about-me .about-desc br {
+    display: none;
 }
 .about-me .about-right .info-list {
     display: grid;
@@ -241,7 +245,7 @@ header .gnb .on:hover::after {
     top: 1.4rem;
     width: 1px;
     height: 27rem;
-    background-color: #D2C7A8;
+    background-color: #f1cbcb;
 }
 .about-me .about-right .info-list .info-item .info-detail {
     display: flex;
@@ -264,8 +268,10 @@ header .gnb .on:hover::after {
     font-weight: 500;
     color: #6E6250;
 }
+
+
 .about-me .about-right .skill {
-    margin-top: auto;
+    margin-top: 4rem;
 }
 .about-me .about-right .skill p {
     font-weight: 600;
@@ -276,7 +282,7 @@ header .gnb .on:hover::after {
     align-items: center;
     gap: 0.8rem;
     color: #CD3131;
-    margin-bottom: 2rem;
+    margin: 6.6rem 0 2rem 0;
 }
 .about-me .about-right .skill .info-skill i {
     font-size: 0.8rem;
@@ -290,7 +296,7 @@ header .gnb .on:hover::after {
 .about-me .about-right .skill ul li {
     width: 16rem;
     height: 5.4rem;
-    background-color: #DFD1A0;
+    background-color: #F0E7E5;
     padding: 12px 20px;
     border-radius: 3rem;
     display: flex;
@@ -398,7 +404,7 @@ header .gnb .on:hover::after {
 .contact .contact-title {
     display: flex;
     justify-content: center;
-    font-size: 5.6rem;
+    font-size: 4rem;
     font-weight: 600;
 }
 .contact .contact-row {
@@ -414,7 +420,7 @@ header .gnb .on:hover::after {
 .contact .contact-row .contact-how {
     width: 46.4rem;
     height: 26rem;
-    background-color: #FBF6E6;
+    background-color: #F0E7E5;
     border-radius: 3rem;
     display: flex;
     flex-direction: column;
@@ -441,7 +447,7 @@ header .gnb .on:hover::after {
 .contact .btn-up {
     width: 5rem;
     height: 5rem;
-    background-color: #C9B98A;
+    background-color: #F3787C;
     box-shadow: 0 0.6rem 0 #000;
     border-radius: 50%;
     display: flex;
@@ -503,7 +509,7 @@ header .gnb .on:hover::after {
 
     .hero .text-area {
         padding-left: 0;
-        padding-top: clamp(20rem, 28vh, 30rem);
+        padding-top: 0;
     }
 
     .hero .text-area h1 {
@@ -668,6 +674,12 @@ header .gnb .on:hover::after {
         bottom: 3rem;
     }
 }
+.hero .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 
 
 /* =========================================================
@@ -696,7 +708,7 @@ header .gnb .on:hover::after {
     }
 
     .hero .text-area {
-        padding-top: 20rem;
+        padding-top: 0;
     }
 
     .hero .text-area h1 {
@@ -750,6 +762,12 @@ header .gnb .on:hover::after {
         justify-self: center;
     }
 }
+.hero .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 
 
 /* =========================================================
@@ -808,7 +826,7 @@ header .gnb .on:hover::after {
     }
 
     .hero .text-area {
-        padding: 17rem 0 0;
+        padding: 0;
         width: calc(100% - 4rem);
         margin: 0 auto;
     }
@@ -1031,6 +1049,12 @@ header .gnb .on:hover::after {
         bottom: 2rem;
     }
 }
+.hero .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 
 
 /* =========================================================
@@ -1057,7 +1081,7 @@ header .gnb .on:hover::after {
 
     .hero .text-area {
         width: calc(100% - 3rem);
-        padding-top: 15rem;
+        padding-top: 0;
     }
 
     .hero .text-area h1 {
@@ -1104,6 +1128,12 @@ header .gnb .on:hover::after {
     overflow: hidden;
     isolation: isolate;
 }
+.hero .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 
 .hero-particles {
     position: absolute;
