@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/./font.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./language.js" defer></script>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -28,10 +29,17 @@
                 </nav>
                 <div class="utility">
                     <img src="./img/icon-search.png" alt="검색">
-                    <button class="language">
-                        <span>KR</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+                    <div class="language-dropdown">
+                        <button class="language" type="button" aria-label="언어 선택" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-options">
+                            <span>KR</span>
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="language-menu" id="language-options" role="listbox" aria-label="언어 선택" hidden>
+                            <button type="button" role="option" tabindex="-1" data-language="KR" aria-selected="true">KR</button>
+                            <button type="button" role="option" tabindex="-1" data-language="EN" aria-selected="false">EN</button>
+                            <button type="button" role="option" tabindex="-1" data-language="CN" aria-selected="false">CN</button>
+                        </div>
+                    </div>
                 </div>
             </header>
         </section>
@@ -238,4 +246,3 @@
 
 </body>
 </html>
-

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/sub_common.css">
+    <link rel="stylesheet" href="./css/sub2_style.css">
+    <script src="./language.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        @charset "UTF-8";
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1400px) {
+
+            body {
+                min-width: 0;
+            }
+
+            header {
+                width: calc(100% - 8rem);
+            }
+
+            .container {
+                width: calc(100% - 8rem);
+                max-width: 120rem;
+            }
+
+            header .gnb ul {
+                gap: 2.5rem;
+            }
+
+            header .gnb ul li a {
+                font-size: 1.6rem;
+            }
+
+            .product-grid {
+                column-gap: 2rem;
+            }
+
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 767px) {
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                min-width: 0;
+            }
+
+            header {
+                width: calc(100% - 4rem);
+                height: 8rem;
+                padding: 1.8rem 0;
+            }
+
+            header h1 {
+                width: auto;
+            }
+
+            header h1 img {
+                width: 10rem;
+            }
+
+            header .gnb {
+                display: none;
+            }
+
+            .utility {
+                width: auto;
+                gap: 1.2rem;
+            }
+
+            .utility .language {
+                width: 7.5rem;
+                height: 3.8rem;
+            }
+
+            .utility .language span {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                width: calc(100% - 4rem);
+            }
+
+            .product-page {
+                padding: 4.5rem 0 6rem;
+            }
+
+            .product-heading {
+                margin-bottom: 3.5rem;
+            }
+
+            .product-heading h2 {
+                font-size: 4rem;
+            }
+
+            .product-heading p {
+                font-size: 1.5rem;
+            }
+
+            .category-list {
+                grid-template-columns: repeat(2, 1fr);
+                margin-bottom: 4rem;
+            }
+
+            .category-list li {
+                height: 4.8rem;
+            }
+
+            .category-list li:nth-child(odd) button {
+                border-right: 0;
+            }
+
+            .category-list li:nth-child(even) button {
+                border-right: 1px solid #d7d7d7;
+            }
+
+            .category-list li:first-child button {
+                border-radius: .3rem 0 0 0;
+            }
+
+            .category-list li:nth-child(2) button {
+                border-radius: 0 .3rem 0 0;
+            }
+
+            .category-list li:nth-last-child(2) button {
+                border-radius: 0 0 0 .3rem;
+            }
+
+            .category-list li:last-child button {
+                border-radius: 0 0 .3rem 0;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4.5rem 1.5rem;
+            }
+
+            .product-name {
+                font-size: 1.5rem;
+            }
+
+            .product-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .product-buttons a {
+                height: 3.8rem;
+            }
+
+            .pagination {
+                gap: 1rem;
+                margin-top: 5rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+         기존 sub.html / 메인페이지 Header 디자인 유지
+    ========================================================== -->
+
+    <header class="sub-header">
+
+        <h1><a href="./index.html"><img src="./img/sub-logo.png" fetchpriority="high" alt="삼양식품 로고"></a></h1>
+
+        <nav class="gnb">
+            <ul>
+                <li><a href="./sub.html"><span>회사소개</span></a></li>
+                <li><a href="#"><span>제품</span></a></li>
+                <li><a href="./sub3.html"><span>홍보관</span></a></li>
+                <li><a href="#"><span>지속가능경영</span></a></li>
+                <li><a href="#"><span>브랜드</span></a></li>
+                <li><a href="#"><span>고객지원</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="utility">
+            <img class="search"
+                 src="./img/sub-icon-search.png"
+                 alt="검색">
+
+            <div class="language-dropdown">
+                <button class="language" type="button" aria-label="언어 선택" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-options">
+                    <span>KR</span>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="language-menu" id="language-options" role="listbox" aria-label="언어 선택" hidden>
+                    <button type="button" role="option" tabindex="-1" data-language="KR" aria-selected="true">KR</button>
+                    <button type="button" role="option" tabindex="-1" data-language="EN" aria-selected="false">EN</button>
+                    <button type="button" role="option" tabindex="-1" data-language="CN" aria-selected="false">CN</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         PRODUCT PAGE
+    ========================================================== -->
+
+    <main>
+
+        <section class="product-page">
+
+            <div class="container">
+
+                <!-- 페이지 타이틀 -->
+
+                <div class="product-heading">
+
+                    <span class="section-label">
+                        OUR PRODUCTS
+                    </span>
+
+                    <h2>제품</h2>
+
+                    <p>
+                        삼양식품의 다양한 제품을 만나보세요.
+                    </p>
+
+                </div>
+
+
+                <!-- 카테고리 -->
+
+                <ul class="category-list">
+
+                    <li>
+                        <button class="active" type="button">
+                            라면
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button">
+                            스낵
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button">
+                            유제품
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button">
+                            소스·간편식
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button">
+                            냉동 간편식
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button">
+                            전체보기
+                        </button>
+                    </li>
+
+                </ul>
+
+
+                <!-- =================================================
+                     PRODUCT GRID
+
+                     이미지 파일은 ./img/product01.png ~
+                     ./img/product12.png 형식으로 넣으면 됩니다.
+                ================================================== -->
+
+                <div class="product-grid">
+
+                    <!-- 01 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item.png"
+                                 alt="삼양1963">
+                        </a>
+
+                        <h3 class="product-name">
+                            삼양1963
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 02 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item2.png"
+                                 alt="삼양1963 큰컵 우지 파개장">
+                        </a>
+
+                        <h3 class="product-name">
+                            삼양1963 큰컵 우지 파개장
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 03 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item3.png"
+                                 alt="짜르르">
+                        </a>
+
+                        <h3 class="product-name">
+                            짜르르
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 04 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item4.png"
+                                 alt="탱글 머쉬룸크림 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            탱글 머쉬룸크림 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 05 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item5.png"
+                                 alt="큰컵 탱글 머쉬룸크림 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            큰컵 탱글 머쉬룸크림 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 06 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item6.png"
+                                 alt="탱글 갈릭오일 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            탱글 갈릭오일 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 07 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item7.png"
+                                 alt="큰컵 탱글 갈릭오일 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            큰컵 탱글 갈릭오일 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 08 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item8.png"
+                                 alt="탱글 바질토마토 프로틴 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            탱글 바질토마토 프로틴 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 09 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/itme9.png"
+                                 alt="큰컵 탱글 바질토마토 프로틴 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            큰컵 탱글 바질토마토 프로틴 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 10 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item10.png"
+                                 alt="탱글 갈릭쉬림프 프로틴 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            탱글 갈릭쉬림프 프로틴 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 11 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item11.png"
+                                 alt="큰컵 탱글 갈릭쉬림프 프로틴 파스타">
+                        </a>
+
+                        <h3 class="product-name">
+                            큰컵 탱글 갈릭쉬림프 프로틴 파스타
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 12 -->
+
+                    <article class="product-card">
+
+                        <a href="#" class="product-image">
+                            <img src="./img/item12.png"
+                                 alt="맵탱 쿨스파이시 비빔면 김치맛">
+                        </a>
+
+                        <h3 class="product-name">
+                            맵탱 쿨스파이시 비빔면 김치맛
+                        </h3>
+
+                        <div class="product-buttons">
+                            <a href="#">제품소개</a>
+                            <a href="#">구매하기</a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     PAGINATION
+                ================================================== -->
+
+                <nav class="pagination" aria-label="제품 목록 페이지">
+
+                    <a href="#" class="prev">
+                        &lt; Prev
+                    </a>
+
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+
+                    <a href="#" class="next">
+                        Next &gt;
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+        <div class="container">
+            <div class="foot-top">
+                <nav>
+                    <ul>
+                        <div class="foot-logo"><img loading="lazy" decoding="async" src="./img/foot-logo.png" alt="로고"></div>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">고객지원</a></li>
+                        <li><a href="#">IR</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </nav>
+                <div class="family">
+                    <p>패밀리 사이트</p>
+                    <img loading="lazy" decoding="async" src="./img/icon-bottomarrow.png" alt="더보기 아이콘">
+                </div>
+            </div>
+            <div class="foot-bot">
+                <div class="account">
+                    <p>
+                        <b>(주) 농심</b><span>서울특별시 동작구 여의대방로 112 (신대방동)</span>
+                        <b>사업자 등록번호</b> <span>118-81-03914</span>
+                    </p>
+                    <p>
+                        <b>대표이사</b> <span>조용철</span>
+                        <b>대표전화</b> <span>02.820.7114</span>
+                        <b>고객센터</b> <span>080.023.5181</span>
+                    </p>
+                    <p>Copyright © SAMYANG Foods CO. Ltd. All Rights Reserved.</p>
+                </div>
+                <div>
+                    <ul class="sns">
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-instagram.png" alt="instagram"></a></li>
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-youtube.png" alt="youtube"></a></li>
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-facebook.png" alt="facebook"></a></li>
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-twitter.png" alt="twitter"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- =========================================================
+         CATEGORY ACTIVE
+    ========================================================== -->
+
+    <script>
+        const categoryButtons = document.querySelectorAll(".category-list button");
+
+        categoryButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+
+                categoryButtons.forEach((item) => {
+                    item.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+            });
+        });
+    </script>
+
+</body>
+</html>

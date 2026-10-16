@@ -370,7 +370,7 @@ header .gnb .on:hover::after {
 .projects .list .text-area h3 {
     width: 100%;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
     font-weight: 500;
     line-height: 1.4;
     transition: color 0.3s ease;
@@ -472,7 +472,7 @@ header .gnb .on:hover::after {
 /* 반응형 */
 
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
     /* COMMON */
     .container {
@@ -630,6 +630,7 @@ header .gnb .on:hover::after {
         margin-top: 1.6rem;
         font-size: clamp(1.5rem, 1.5vw, 1.8rem);
         line-height: 1.4;
+        font-size: 2rem;
     }
 
 
@@ -684,10 +685,10 @@ header .gnb .on:hover::after {
 
 /* =========================================================
    TABLET PORTRAIT
-   768px ~ 1199px
+   768px ~ 1023px
    ========================================================= */
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
     .container {
         width: calc(100% - 6rem);
@@ -733,8 +734,8 @@ header .gnb .on:hover::after {
     }
 
     .about-me .about-right .info-list {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.2rem, 2vw, 2rem);
     }
 
     .about-me .about-right .skill {
@@ -971,7 +972,7 @@ header .gnb .on:hover::after {
     .projects .container {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 8rem;
     }
 
     .projects .list {
@@ -990,8 +991,7 @@ header .gnb .on:hover::after {
     }
 
     .projects .list .text-area h3 {
-        margin-top: 1.4rem;
-        font-size: 1.6rem;
+        font-size: 3.2rem;
         line-height: 1.4;
     }
 
@@ -1049,76 +1049,6 @@ header .gnb .on:hover::after {
         bottom: 2rem;
     }
 }
-.hero .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-
-
-/* =========================================================
-   SMALL MOBILE
-   ~399px
-   ========================================================= */
-
-@media (max-width: 399px) {
-
-    .container {
-        width: calc(100% - 3rem);
-    }
-
-    header .gnb ul {
-        gap: 1.5rem;
-    }
-
-    header .gnb li a {
-        font-size: 1.3rem;
-    }
-
-
-    /* HERO */
-
-    .hero .text-area {
-        width: calc(100% - 3rem);
-        padding-top: 0;
-    }
-
-    .hero .text-area h1 {
-        font-size: 2.6rem;
-    }
-
-    .hero .text-area .desc {
-        font-size: 1.3rem;
-    }
-
-
-    /* ABOUT */
-
-    .about-me .about-left .profile-info {
-        align-items: flex-start;
-    }
-
-    .about-me .about-left .profile-info a {
-        padding: 0.9rem 1.2rem;
-    }
-
-    .about-me .about-right h3 {
-        font-size: 2.1rem;
-    }
-
-
-    /* SKILL */
-
-    .about-me .skill ul {
-        gap: 0.8rem;
-    }
-
-    .about-me .about-right .skill ul li {
-        font-size: 1.2rem;
-    }
-}
-
 
 /* =========================================================
    HERO CREATIVE OPENING
@@ -1267,5 +1197,256 @@ header .gnb .on:hover::after {
 
     .hero-index {
         display: none;
+    }
+}
+
+/* Responsive layout refinements */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about-me .about-content {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: start;
+        gap: clamp(2rem, 4vw, 4rem);
+    }
+
+    .about-me .about-left,
+    .about-me .about-right {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-me .about-left .profile {
+        max-width: none;
+    }
+
+    .about-me .about-left .profile-info {
+        margin-top: -1.5rem;
+        padding: 0 0.8rem;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+
+    .about-me .about-left .profile-name {
+        width: auto;
+        min-width: 0;
+    }
+
+    .about-me .about-left .profile-info .profile-name strong {
+        font-size: clamp(2.2rem, 3vw, 2.8rem);
+    }
+
+    .about-me .about-left .profile-info .profile-name span,
+    .about-me .about-left .profile-info .profile-name .profile-job {
+        font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+    }
+
+    .about-me .about-left .profile-info a {
+        flex-shrink: 0;
+        padding: 0.9rem 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .about-me .about-right h3 {
+        font-size: clamp(2.1rem, 2.8vw, 2.8rem);
+    }
+
+    .about-me .about-right .about-desc {
+        font-size: clamp(1.35rem, 1.7vw, 1.6rem);
+    }
+
+    .about-me .about-right .info-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    .about-me .about-right .info-list .info-item .info-detail {
+        gap: 1.8rem;
+    }
+
+    .about-me .about-right .info-list .info-item .info-detail .info-desc {
+        font-size: 1.5rem;
+    }
+
+    .about-me .about-right .skill ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .about-me .about-right .skill ul li {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1.3rem;
+    }
+
+    .projects .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact .contact-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact .contact-row .contact-how:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 1.25rem);
+        justify-self: center;
+    }
+}
+
+@media (max-width: 767px) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+
+    header {
+        height: 5.6rem;
+        padding: 0 1.2rem;
+    }
+
+    header .gnb {
+        width: 100%;
+    }
+
+    header .gnb ul {
+        justify-content: center;
+        gap: clamp(1rem, 4vw, 2.4rem);
+    }
+
+    header .gnb li a {
+        display: block;
+        font-size: clamp(1.2rem, 3.6vw, 1.5rem);
+        white-space: nowrap;
+    }
+
+    .hero {
+        height: clamp(60rem, 88svh, 76rem);
+    }
+
+    .hero .container {
+        width: calc(100% - 4rem);
+    }
+
+    .hero .text-area {
+        width: 100%;
+        max-width: 56rem;
+    }
+
+    .about-me .about-left .profile-info {
+        width: 100%;
+        margin: -1.5rem 0 0;
+        padding: 0 1rem;
+        align-items: flex-end;
+    }
+
+    .about-me .about-left .profile-info .profile-name {
+        width: auto;
+    }
+
+    .about-me .about-left .profile-info a {
+        white-space: nowrap;
+    }
+
+    .about-me .about-right .info-list .info-item::before {
+        height: calc(100% - 1.4rem);
+    }
+
+    .contact .contact-row .contact-how {
+        width: 100%;
+    }
+}
+
+.hero .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .contact .contact-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contact .contact-row .contact-how,
+    .contact .contact-row .contact-how:last-child {
+        width: 100%;
+        max-width: 46.4rem;
+        height: 16rem;
+        grid-column: auto;
+        justify-self: auto;
+    }
+
+    .contact .contact-row .contact-how img {
+        width: 4.8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-me .about-left .profile {
+        width: 100%;
+        background-size: 100% auto;
+    }
+
+    .about-me .about-left .profile-info {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-me .tit h2,
+    .projects .tit h2,
+    .contact .tit h2 {
+        font-size: 2.6rem;
+    }
+
+    .about-me .tit i,
+    .projects .tit i,
+    .contact .tit i {
+        font-size: 1.4rem;
+    }
+
+    header .gnb li a {
+        font-size: clamp(1.4rem, 3.8vw, 1.6rem);
+    }
+
+    .hero .text-area .caption {
+        font-size: 1.4rem;
+    }
+
+    .hero .text-area .desc,
+    .about-me .about-left .profile-info .profile-name span,
+    .about-me .about-left .profile-info .profile-name .profile-job,
+    .about-me .about-left .profile-info .profile-location,
+    .about-me .about-left .profile-info a,
+    .about-me .about-right .about-desc,
+    .about-me .about-right .info-list .info-item .info-detail .info-desc,
+    .about-me .about-right .info-list .info-item .info-detail .info-date,
+    .about-me .about-right .skill ul li,
+    .contact .contact-row .contact-how span {
+        font-size: 1.6rem;
+    }
+
+    .about-me .about-right h3 {
+        font-size: clamp(2.4rem, 6.4vw, 2.8rem);
+    }
+
+    .about-me .about-right .info-list .info-item .info-detail small {
+        font-size: 1.4rem;
+    }
+
+    .about-me .about-right .info-list .info-item .info-title p,
+    .about-me .about-right .skill .info-skill p,
+    .contact .contact-row .contact-how p {
+        font-size: 1.7rem;
+    }
+
+    .contact .contact-title {
+        font-size: clamp(2.6rem, 7vw, 3rem);
     }
 }
