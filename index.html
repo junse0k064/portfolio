@@ -326,7 +326,7 @@
 
         <!-- 모달팝업 -->
     <div class="modal-wrap">
-        <button type="button" class="btn-close">닫기</button>
+        <button type="button" class="btn-close">X</button>
 
         <div class="modal-con">
             <div class="modal-link">
@@ -460,11 +460,25 @@
             });
 
 
-            // 모달팝업 닫기
-            $('.btn-close').click(function(){
+            function closeModal() {
                 $('.modal-wrap').fadeOut(200, function(){
                     $('.modal-con img').attr('src', '')
                 });
+            }
+
+            // 모달팝업 닫기
+            $('.btn-close').click(closeModal);
+
+            $('.modal-wrap').click(function(e){
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            $(document).keydown(function(e){
+                if (e.key === 'Escape' && $('.modal-wrap').is(':visible')) {
+                    closeModal();
+                }
             });
 
         });

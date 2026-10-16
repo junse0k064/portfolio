@@ -1,0 +1,192 @@
+.container {
+    width: 120rem;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: 1.4rem;
+    color: #FC5500;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .12rem;
+}
+
+.section-label::before {
+    content: "";
+    width: 1.8rem;
+    height: .2rem;
+    background: #FC5500;
+}
+
+/* =========================================================
+    PRODUCT PAGE
+========================================================= */
+
+.product-page {
+    padding: 8rem 0 8rem;
+}
+
+.product-heading {
+    margin-bottom: 5.2rem;
+}
+
+.product-heading h2 {
+    margin: 0 0 1.2rem;
+    font-size: 5.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.3rem;
+}
+
+.product-heading p {
+    margin: 0;
+    color: #555;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+/* 카테고리 */
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-bottom: 6.2rem;
+}
+
+.category-list li {
+    height: 5.8rem;
+}
+
+.category-list button {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d7d7d7;
+    border-right: 0;
+    background: #fff;
+    color: #222;
+    font-size: 1.7rem;
+    font-weight: 600;
+    transition: .2s ease;
+    text-align: center;
+}
+
+.category-list li:first-child button {
+    border-radius: .3rem 0 0 .3rem;
+}
+
+.category-list li:last-child button {
+    border-right: 1px solid #d7d7d7;
+    border-radius: 0 .3rem .3rem 0;
+}
+
+.category-list button.active {
+    border-color: #FF5602;
+    background: #FF5602;
+    color: #fff;
+}
+
+/* 제품 그리드 */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2.8rem;
+    row-gap: 6.8rem;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / .83;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #F8F7F5;
+    border-radius: 1.6rem;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .25s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.product-name {
+    min-height: 2.8rem;
+    margin: 1.5rem 0 1.2rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.product-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+}
+
+.product-buttons a {
+    height: 4.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FF5602;
+    color: #FF5602;
+    font-size: 1.35rem;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.product-buttons a:hover {
+    background: #FF5602;
+    color: #fff;
+}
+
+/* =========================================================
+    PAGINATION
+========================================================= */
+
+.pagination {
+    margin-top: 7.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.pagination a {
+    min-width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #222;
+}
+
+.pagination .prev,
+.pagination .next {
+    width: auto;
+    color: #555;
+}
+
+.pagination .active {
+    border-radius: 50%;
+    background: #FF5602;
+    color: #fff;
+    font-weight: 700;
+}
