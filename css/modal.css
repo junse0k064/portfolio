@@ -16,6 +16,20 @@
             margin: 0 auto;
         }
 
+        .modal-images img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-link {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 30px;
+        }
+
         .modal-wrap .btn-close {
             position: fixed;
             top: 50px;
@@ -30,13 +44,22 @@
             font-size: 18px;
         }
         .modal-link a {
-            display: block;
-            width: 160px;
+            display: inline-block;
+            min-width: 160px;
+            padding: 0 20px;
             line-height: 60px;
-            background-color: #eee;
+            background-color: #ddd;
             text-align: center;
             border-radius: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .modal-link a.is-disabled {
+            color: black;
+            background-color: #ddd;
+            cursor: pointer;
+            font-weight: 500;
         }
 
 

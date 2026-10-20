@@ -1,13 +1,15 @@
 header {
-    width: 100%;
+    width: 134rem;
     max-width: none;
     height: 10rem;
-    padding: 0 8rem;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 header h1 {
+    width: 14%;
     margin: 0;
     cursor: pointer;
 }
@@ -18,7 +20,7 @@ header .gnb ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
+    gap: 6rem;
 }
 header .gnb ul li a {
     color: #fff;
@@ -48,9 +50,6 @@ header .gnb ul li a:hover span::after {
 .utility img {
     cursor: pointer;
 }
-.language-dropdown {
-    position: relative;
-}
 .utility .language {
     width: 10rem;
     height: 4.4rem;
@@ -65,54 +64,6 @@ header .gnb ul li a:hover span::after {
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
-}
-.language-menu {
-    position: absolute;
-    z-index: 20;
-    top: calc(100% + .8rem);
-    right: 0;
-    width: max-content;
-    min-width: 100%;
-    padding: .4rem 0;
-    border: 1px solid #eee;
-    border-radius: 1.2rem;
-    background: #fff;
-    box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .14);
-    opacity: 0;
-    transform: translateY(-.8rem) scaleY(.96);
-    transform-origin: top;
-    transition: opacity .22s ease, transform .22s ease;
-}
-.language-dropdown.is-open .language-menu {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
-}
-.language-menu[hidden] {
-    display: none;
-}
-.language-menu [role="option"] {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: .8rem 1.6rem;
-    border: 0;
-    background: #fff;
-    color: #333;
-    font: inherit;
-    font-size: 1.6rem;
-    text-align: center;
-    cursor: pointer;
-}
-.language-menu [role="option"]:hover,
-.language-menu [role="option"]:focus,
-.language-menu [role="option"][aria-selected="true"] {
-    outline: 0;
-    background: #fff3ed;
-}
-@media (prefers-reduced-motion: reduce) {
-    .language-menu {
-        transition: none;
-    }
 }
 .language i {
     color: #fff;

@@ -144,6 +144,7 @@
 .summary-card strong small {
     display: block;
     font-size: 2rem;
+    margin-top: 1rem;
 }
 
 .summary-card p {
