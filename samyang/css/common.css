@@ -6,6 +6,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 header h1 {
     margin: 0;
@@ -13,6 +14,10 @@ header h1 {
 }
 header .gnb {
     width: 64%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 header .gnb ul {
     display: flex;
@@ -66,6 +71,9 @@ header .gnb ul li a:hover span::after {
     font-weight: 700;
     color: #fff;
 }
+.utility .language .fa-solid, .utility .language .fas {
+    color: #fff;
+}
 .language-menu {
     position: absolute;
     z-index: 20;
@@ -109,15 +117,6 @@ header .gnb ul li a:hover span::after {
     outline: 0;
     background: #fff3ed;
 }
-@media (prefers-reduced-motion: reduce) {
-    .language-menu {
-        transition: none;
-    }
-}
-.language i {
-    color: #fff;
-}
-
 
 
 
@@ -139,6 +138,7 @@ footer .container {
 .foot-top nav ul {
     display: flex;
     gap: 4rem;
+    align-items: center;
 }
 .foot-top nav ul li {
     padding: 2rem 0;

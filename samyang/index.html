@@ -22,7 +22,7 @@
                         <li><a href="./sub.html"><span>회사소개</span></a></li>
                         <li><a href="./sub2.html"><span>제품</span></a></li>
                         <li><a href="./sub3.html"><span>홍보관</span></a></li>
-                        <li><a href="#"><span>지속가능경영</span></a></li>
+                        <li><a href="./sub4.html"><span>지속가능경영</span></a></li>
                         <li><a href="#"><span>브랜드</span></a></li>
                         <li><a href="#"><span>고객지원</span></a></li>
                     </ul>
@@ -93,12 +93,16 @@
 
         <section class="video">
             <div class="advertisement">
-                <video controls preload="none" poster="./img/video.jpg">
+                <video preload="none" poster="./img/video.jpg" aria-label="삼양식품 브랜드 영상">
                     <source src="./img/video_banner.mp4" type="video/mp4">
                     브라우저가 영상을 지원하지 않습니다.
                 </video>
+                <button class="video-play-button" type="button" aria-label="영상 재생">
+                    <span class="video-play-icon" aria-hidden="true"></span>
+                </button>
             </div>
         </section>
+        
 
         <section class="slogan">
             <div class="container">
@@ -241,6 +245,49 @@
 
                 button.classList.add("active");
             });
+        });
+    </script>
+
+    <script>
+        const brandVideo = document.querySelector(".advertisement video");
+        const videoPlayButton = document.querySelector(".video-play-button");
+        const videoContainer = document.querySelector(".advertisement");
+
+        const playBrandVideo = async () => {
+            try {
+                await brandVideo.play();
+            } catch (error) {
+                if (error instanceof DOMException && error.name === "AbortError") {
+                    return;
+                }
+
+                console.error("브랜드 영상을 재생하지 못했습니다.", error);
+            }
+        };
+
+        const updateVideoPlaybackState = () => {
+            const isPlaying = !brandVideo.paused && !brandVideo.ended;
+            videoContainer.classList.toggle("is-playing", isPlaying);
+            videoPlayButton.setAttribute("aria-label", isPlaying ? "영상 일시정지" : "영상 재생");
+        };
+
+        videoPlayButton.addEventListener("click", () => {
+            if (brandVideo.paused || brandVideo.ended) {
+                playBrandVideo();
+            } else {
+                brandVideo.pause();
+            }
+        });
+
+        brandVideo.addEventListener("play", updateVideoPlaybackState);
+        brandVideo.addEventListener("pause", updateVideoPlaybackState);
+        brandVideo.addEventListener("ended", updateVideoPlaybackState);
+        brandVideo.addEventListener("click", () => {
+            if (brandVideo.paused || brandVideo.ended) {
+                playBrandVideo();
+            } else {
+                brandVideo.pause();
+            }
         });
     </script>
 

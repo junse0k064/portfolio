@@ -1,0 +1,208 @@
+.sub-hero::before {
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .08) 75%),
+        url(../img/sub4-visual.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.sustainability-intro {
+    padding: 6.4rem;
+    text-align: center;
+}
+
+.sustainability-intro .section-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+    color: #fc5500;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .12rem;
+}
+
+.sustainability-intro h2 {
+    margin: 0 0 1.8rem;
+    color: #171717;
+    font-size: 3rem;
+    line-height: 1.4;
+}
+
+.sustainability-intro p {
+    color: #777;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+.sustainability-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sustainability-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 30rem;
+}
+
+.sustainability-card > img {
+    width: 100%;
+    height: 100%;
+    min-height: 30rem;
+    object-fit: cover;
+}
+
+.sustainability-card-copy {
+    background-color: #f2f2f2;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5rem clamp(3rem, 6vw, 9rem);
+}
+.sustainability-card:nth-child(2)>.sustainability-card-copy {
+    background-color: #fff;
+}
+
+.sustainability-card-copy .section-label {
+    margin-bottom: 1rem;
+    color: #fc5500;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.sustainability-card-copy .section-label::before {
+    display: none;
+}
+
+.sustainability-card-copy h3 {
+    margin: 0 0 1.5rem;
+    color: #171717;
+    font-size: 4.2rem;
+    line-height: 1.4;
+}
+
+.sustainability-card-copy p {
+    margin: 0 0 4rem;
+    color: #777;
+    font-size: 2.2rem;
+    line-height: 1.8;
+}
+
+.sustainability-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: .9rem 1.8rem;
+    border: 1px solid #fc5500;
+    border-radius: 3rem;
+    color: #fc5500;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.sustainability-link:hover {
+    background: #fc5500;
+    color: #fff;
+}
+
+.sustainability-cta {
+    height: 20rem;
+    padding: 4rem 0;
+    margin-top: 6rem;
+    color: #fff;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, .38), rgba(0, 0, 0, .08)),
+        url(../img/Business-4.jpg) center 72% / cover no-repeat;
+}
+
+.sustainability-cta .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sustainability-cta h2 {
+    margin: 0;
+    font-size: 2.8rem;
+    line-height: 1.4;
+}
+
+.sustainability-cta .sustainability-link {
+    flex: 0 0 auto;
+    border-color: #fc5500;
+    background: #fc5500;
+    color: #fff;
+}
+
+.sustainability-cta .sustainability-link:hover {
+    border-color: #fff;
+    background: #fff;
+    color: #fc5500;
+}
+
+@media (max-width: 768px) {
+    .sustainability-intro {
+        padding: 5rem 2rem 4.4rem;
+    }
+
+    .sustainability-intro h2 {
+        font-size: 2.4rem;
+    }
+
+    .sustainability-intro p {
+        font-size: 1.4rem;
+    }
+
+    .sustainability-list {
+        gap: 1.6rem;
+        padding: 0 1.6rem;
+    }
+
+    .sustainability-card {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .sustainability-card > img {
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+    }
+
+    .sustainability-card-copy {
+        padding: 2.8rem 1rem 3.2rem;
+    }
+
+    .sustainability-card-copy h3 {
+        font-size: 2.2rem;
+    }
+
+    .sustainability-cta {
+        height: auto;
+        margin-top: 2rem;
+        padding: 3rem 0;
+    }
+
+    .sustainability-cta h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sustainability-cta {
+        height: auto;
+    }
+
+    .sustainability-cta .container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

@@ -1,25 +1,11 @@
-.container {
-    width: 120rem;
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .section-label {
     display: block;
-    color: #fc5500;
-    font-weight: 700;
     letter-spacing: .18rem;
     margin-bottom: 2rem;
 }
 
 .section-label::before {
-    content: "";
-    display: inline-block;
-    width: 1.8rem;
-    height: .2rem;
     margin: 0 .8rem .50rem 0;
-    background: #fc5500;
 }
 
 .section-title {
@@ -52,54 +38,6 @@
     color: #fff;
 }
 
-
-/* 서브 페이지 */
-
-.sub-hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 26rem;
-    color: #fff;
-    background: #000;
-}
-
-.sub-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: .7;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, .86) 0%,
-            rgba(0, 0, 0, .60) 40%,
-            rgba(0, 0, 0, .12) 72%
-        ),
-        url(../img/sub1-visual.jpg) no-repeat center / cover;
-}
-
-.sub-hero-copy {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.sub-hero-copy h2 {
-    margin: 0 0 1.2rem;
-    font-size: 4.4rem;
-    line-height: 1;
-    letter-spacing: -.25rem;
-}
-
-.sub-hero-copy p {
-    margin: 0;
-    font-size: 1.6rem;
-}
 
 .about-section {
     padding: 8rem 0;
@@ -384,6 +322,7 @@
     display: block;
     color: #111;
     font-size: 1.6rem;
+    margin: 0.6rem 0 0 1.6rem;
 }
 
 .global-copy .section-copy {
@@ -398,12 +337,12 @@
 
 .cta-section {
     height: 200px;
-    padding: 4.7rem 0;
+    padding: 4rem 0;
     color: #fff;
     background-color: #000;
     background-image:
         linear-gradient(90deg, rgba(0, 0, 0, .93), rgba(0, 0, 0, .28)),
-        url(./img/promotions.jpg);
+        url(../img/promotions.jpg);
     background-repeat: no-repeat;
     background-position: center, right center;
     background-size: cover, contain;
@@ -431,4 +370,71 @@
     border-color: #fc5500;
     background: #fc5500;
     color: #fff;
+}
+
+@media (max-width: 900px) {
+    .summary-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.6rem;
+    }
+    .summary-card {
+        width: auto;
+    }
+    .intro-wrap,
+    .global-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.4rem;
+    }
+    .intro-copy,
+    .intro-image,
+    .global-copy,
+    .global-map {
+        width: 100%;
+    }
+    .intro-copy {
+        padding-right: 0;
+    }
+    .history-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem 2rem;
+    }
+    .history-item {
+        width: auto;
+    }
+    .value-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .value-card {
+        width: auto;
+    }
+    .cta-section {
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-section,
+    .value-section {
+        padding: 6rem 0;
+    }
+    .summary-list,
+    .history-list,
+    .value-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .intro-section {
+        padding: 1rem 0 6rem;
+    }
+    .intro-image {
+        height: auto;
+    }
+    .cta-section .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
 }

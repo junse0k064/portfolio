@@ -1,25 +1,8 @@
-.container {
-    width: 120rem;
-    max-width: 120rem;
-    margin: 0 auto;
-}
-
 .section-label {
     display: inline-flex;
     align-items: center;
-    gap: .8rem;
-    margin-bottom: 1.4rem;
-    color: #FC5500;
-    font-size: 1.6rem;
-    font-weight: 700;
+    gap: 1.2rem;
     letter-spacing: .12rem;
-}
-
-.section-label::before {
-    content: "";
-    width: 1.8rem;
-    height: .2rem;
-    background: #FC5500;
 }
 
 /* =========================================================
@@ -88,6 +71,11 @@
     background: #FF5602;
     color: #fff;
 }
+.pagination .next .fa-angle-right {
+    margin-left: 1rem;
+    color: #555;
+}
+
 
 /* 제품 그리드 */
 

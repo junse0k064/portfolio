@@ -1,70 +1,19 @@
-﻿.container {
-    width: 120rem;
-    max-width: 120rem;
-    margin: 0 auto;
-}
-
 .section-label {
     display: inline-flex;
     align-items: center;
     gap: 1.2rem;
-    margin-bottom: 1.4rem;
-    color: #FC5500;
-    font-size: 1.6rem;
-    font-weight: 700;
     letter-spacing: .12rem;
 }
 
-.section-label::before {
-    content: "";
-    width: 1.8rem;
-    height: .2rem;
-    background: #FC5500;
-}
-
-.sub-hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 26rem;
-    color: #fff;
-    background: #000;
-}
-
 .sub-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.7;
-    background:linear-gradient(
-        90deg,
+    background-image:
+        linear-gradient(
+            90deg,
             rgba(0, 0, 0, .86) 0%,
             rgba(0, 0, 0, .60) 40%,
             rgba(0, 0, 0, .12) 72%
         ),
-        url(../img/sub3-visual.jpg) no-repeat center / cover;
-}
-
-.sub-hero-copy {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.sub-hero-copy h2 {
-    margin: 0 0 1.2rem;
-    font-size: 4.4rem;
-    line-height: 1;
-    letter-spacing: -.25rem;
-}
-
-.sub-hero-copy p {
-    margin: 0;
-    font-size: 1.6rem;
+        url(../img/sub3-visual.jpg);
 }
 
 .promotion-container {
@@ -72,7 +21,7 @@
     grid-template-columns: minmax(0, 2.15fr) minmax(25rem, .85fr);
     align-items: start;
     column-gap: 2rem;
-    width: 120rem;
+    width: min(120rem, calc(100% - 4rem));
     max-width: 120rem;
     margin: 0 auto;
     padding: 6.4rem 0 8rem;
@@ -535,6 +484,7 @@
     .promotion-container {
         grid-template-columns: minmax(0, 1fr) 25rem;
         column-gap: 1.5rem;
+        width: calc(100% - 4rem);
     }
 
     .recommended-section {
