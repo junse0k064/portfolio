@@ -220,7 +220,7 @@
     padding: 3.5rem 3rem;
     overflow: hidden;
     border-radius: 0;
-    background: #D9F5A5;
+    background: #f6f4f2;
     text-align: left;
     transition: transform .3s ease, box-shadow .3s ease;
 }
@@ -230,13 +230,12 @@
 
 .value-card::before {
     position: absolute;
-    top: 1.7rem;
+    top: 2rem;
     right: 3rem;
-    color: rgba(87, 126, 176, .22);
+    color: #222;
     font-size: 4.8rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1;
-    letter-spacing: -.3rem;
 }
 
 .value-card:nth-child(1)::before {

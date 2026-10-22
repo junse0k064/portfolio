@@ -37,7 +37,7 @@ h2 {
 }
 
 .tab li {
-    width: 16rem;
+    width: 18rem;
 }
 
 .tab button {
@@ -78,7 +78,6 @@ h2 {
 /* 상품 가로배열 */
 .product-list {
     width: 100%;
-
     display: flex;
     justify-content: space-between;
 }
@@ -225,11 +224,12 @@ h2 {
     font-size: 4.8rem;
 }
 .news-wrap {
-    display: flex;
-    justify-content: center;
-    gap: 2.4rem;
     overflow: hidden;
     padding-left: 28rem;
+}
+.news-track {
+    display: flex;
+    justify-content: center;
 }
 .news-item {
     width: 34.2rem;

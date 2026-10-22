@@ -7,6 +7,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index: 30;
 }
 header::after {
     content: "";
@@ -31,17 +32,22 @@ header .gnb {
     transform: translate(-50%, -50%);
 }
 header .gnb ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: 7.36rem 3.68rem 5.52rem 11.04rem 5.52rem 7.36rem;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
+    column-gap: 8rem;
 }
 header .gnb ul li a {
+    display: block;
     color: #111;
     font-size: 2rem;
     font-weight: 500;
+    text-align: center;
 }
 header .gnb ul li a span {
+    display: block;
+    width: 100%;
     position: relative;
 }
 header .gnb ul li a span:hover:after,
@@ -53,6 +59,82 @@ header .gnb ul li a:hover span::after {
     height: 0.4rem;
     margin-top: 1rem;
     background-color: #FF5602;
+}
+header .gnb-dropdown {
+    position: absolute;
+    z-index: 29;
+    top: 100%;
+    left: 50%;
+    width: 100vw;
+    box-sizing: border-box;
+    height: 0;
+    padding: 0;
+    border-top: 0 solid #eee;
+    border-bottom: 0 solid #bbb;
+    overflow: hidden;
+    background: #fff;
+    transform: translateX(-50%);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        height .6s cubic-bezier(.22, 1, .36, 1),
+        padding .6s cubic-bezier(.22, 1, .36, 1),
+        border-width .6s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s linear .6s;
+}
+header:hover .gnb-dropdown,
+header:focus-within .gnb-dropdown {
+    height: 33rem;
+    padding: 1.6rem 0 2rem;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+        height .6s cubic-bezier(.22, 1, .36, 1),
+        padding .6s cubic-bezier(.22, 1, .36, 1),
+        border-width .6s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s;
+}
+.gnb-dropdown-inner {
+    width: 64%;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 7.36rem 3.68rem 5.52rem 11.04rem 5.52rem 7.36rem;
+    justify-content: center;
+    column-gap: 8rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+.gnb-dropdown-inner > ul {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+.gnb-dropdown-inner a {
+    color: #666;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+.gnb-dropdown-inner a:hover,
+.gnb-dropdown-inner a:focus-visible {
+    color: #000;
+}
+@media (prefers-reduced-motion: reduce) {
+    header .gnb-dropdown,
+    .gnb-dropdown-inner a {
+        transition: none;
+    }
 }
 
 .container {

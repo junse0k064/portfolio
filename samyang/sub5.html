@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브랜드</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/sub_common.css">
+    <link rel="stylesheet" href="./css/sub4_style.css">
+    <script src="./language.js" defer></script>
+    <script src="./dropdown.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="sub-header">
+
+        <h1><a href="./index.html"><img src="./img/sub-logo.png" fetchpriority="high" alt="삼양식품 로고"></a></h1>
+
+        <nav class="gnb">
+            <ul>
+                <li><a href="./sub.html"><span>회사소개</span></a></li>
+                <li><a href="./sub2.html"><span>제품</span></a></li>
+                <li><a href="./sub3.html"><span>홍보관</span></a></li>
+                <li><a href="#"><span>지속가능경영</span></a></li>
+                <li><a href="#"><span>브랜드</span></a></li>
+                <li><a href="#"><span>고객지원</span></a></li>
+            </ul>
+        </nav>
+        <div class="gnb-dropdown">
+            <div class="gnb-dropdown-inner">
+                <ul aria-label="회사소개 메뉴">
+                    <li><a href="#">삼양식품</a></li>
+                    <li><a href="#">해외법인</a></li>
+                    <li><a href="#">공장</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                </ul>
+                <ul aria-label="제품 메뉴">
+                    <li><a href="#">라면</a></li>
+                    <li><a href="#">스낵</a></li>
+                    <li><a href="#">유제품</a></li>
+                    <li><a href="#">소스·간편식</a></li>
+                    <li><a href="#">냉동 간편식</a></li>
+                </ul>
+                <ul aria-label="홍보관 메뉴">
+                    <li><a href="#">삼양소식</a></li>
+                    <li><a href="#">홍보영상</a></li>
+                    <li><a href="#">삼양역사관</a></li>
+                </ul>
+                <ul aria-label="지속가능경영 메뉴">
+                    <li><a href="#">ESG 전략체계</a></li>
+                    <li><a href="#">환경경영</a></li>
+                    <li><a href="#">사회적 가치 경영</a></li>
+                    <li><a href="#">책임경영</a></li>
+                    <li><a href="#">뉴스룸</a></li>
+                    <li><a href="#">보고서 및 정책</a></li>
+                </ul>
+                <ul aria-label="브랜드 메뉴">
+                    <li><a href="#">삼양1963</a></li>
+                    <li><a href="#">삼양라면</a></li>
+                    <li><a href="#">불닭볶음면</a></li>
+                    <li><a href="#">맵탱</a></li>
+                    <li><a href="#">펄스랩</a></li>
+                    <li><a href="#">짜짜로니</a></li>
+                    <li><a href="#">탱글</a></li>
+                </ul>
+                <ul aria-label="고객지원 메뉴">
+                    <li><a href="#">고객만족센터</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">사업제안</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="utility">
+            <img class="search"
+                 src="./img/sub-icon-search.png"
+                 alt="검색">
+
+            <div class="language-dropdown">
+                <button class="language" type="button" aria-label="언어 선택" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-options">
+                    <span>KR</span>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="language-menu" id="language-options" role="listbox" aria-label="언어 선택" hidden>
+                    <button type="button" role="option" tabindex="-1" data-language="KR" aria-selected="true">KR</button>
+                    <button type="button" role="option" tabindex="-1" data-language="EN" aria-selected="false">EN</button>
+                    <button type="button" role="option" tabindex="-1" data-language="CN" aria-selected="false">CN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <footer>
+        <div class="container">
+            <div class="foot-top">
+                <nav>
+                    <ul>
+                        <li class="foot-logo"><img loading="lazy" decoding="async" src="./img/foot-logo.png" alt="로고"></li>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">고객지원</a></li>
+                        <li><a href="#">IR</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </nav>
+                <div class="family">
+                    <p>패밀리 사이트</p>
+                    <img loading="lazy" decoding="async" src="./img/icon-bottomarrow.png" alt="더보기 아이콘">
+                </div>
+            </div>
+            <div class="foot-bot">
+                <div class="account">
+                    <p>
+                        <b>(주) 농심</b><span>서울특별시 동작구 여의대방로 112 (신대방동)</span>
+                        <b>사업자 등록번호</b> <span>118-81-03914</span>
+                    </p>
+                    <p>
+                        <b>대표이사</b> <span>조용철</span>
+                        <b>대표전화</b> <span>02.820.7114</span>
+                        <b>고객센터</b> <span>080.023.5181</span>
+                    </p>
+                    <p>Copyright © SAMYANG Foods CO. Ltd. All Rights Reserved.</p>
+                </div>
+                <div>
+                    <ul class="sns">
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-instagram.png" alt="instagram"></a></li>
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-youtube.png" alt="youtube"></a></li>
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-facebook.png" alt="facebook"></a></li>
+                        <li><a href="#"><img loading="lazy" decoding="async" src="./img/sns-twitter.png" alt="twitter"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/./font.css">
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./language.js" defer></script>
+    <script src="./dropdown.js" defer></script>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -17,16 +19,63 @@
         <section class="visual">
             <header>
                 <h1><a><img src="./img/logo.png" fetchpriority="high" alt=""></a></h1>
-                <nav class="gnb">
-                    <ul>
-                        <li><a href="./sub.html"><span>회사소개</span></a></li>
-                        <li><a href="./sub2.html"><span>제품</span></a></li>
-                        <li><a href="./sub3.html"><span>홍보관</span></a></li>
-                        <li><a href="./sub4.html"><span>지속가능경영</span></a></li>
-                        <li><a href="#"><span>브랜드</span></a></li>
-                        <li><a href="#"><span>고객지원</span></a></li>
-                    </ul>
-                </nav>
+                <div class="gnb-area">
+                    <nav class="gnb" aria-label="주 메뉴">
+                        <ul>
+                            <li><a href="./sub.html"><span>회사소개</span></a></li>
+                            <li><a href="./sub2.html"><span>제품</span></a></li>
+                            <li><a href="./sub3.html"><span>홍보관</span></a></li>
+                            <li><a href="./sub4.html"><span>지속가능경영</span></a></li>
+                            <li><a href="#"><span>브랜드</span></a></li>
+                            <li><a href="#"><span>고객지원</span></a></li>
+                        </ul>
+                    </nav>
+                    <div class="gnb-dropdown">
+                        <div class="gnb-dropdown-inner">
+                            <ul aria-label="회사소개 메뉴">
+                                <li><a href="#">삼양식품</a></li>
+                                <li><a href="#">해외법인</a></li>
+                                <li><a href="#">공장</a></li>
+                                <li><a href="#">오시는 길</a></li>
+                            </ul>
+                            <ul aria-label="제품 메뉴">
+                                <li><a href="#">라면</a></li>
+                                <li><a href="#">스낵</a></li>
+                                <li><a href="#">유제품</a></li>
+                                <li><a href="#">소스·간편식</a></li>
+                                <li><a href="#">냉동 간편식</a></li>
+                            </ul>
+                            <ul aria-label="홍보관 메뉴">
+                                <li><a href="#">삼양소식</a></li>
+                                <li><a href="#">홍보영상</a></li>
+                                <li><a href="#">삼양역사관</a></li>
+                            </ul>
+                            <ul aria-label="지속가능경영 메뉴">
+                                <li><a href="#">ESG 전략체계</a></li>
+                                <li><a href="#">환경경영</a></li>
+                                <li><a href="#">사회적 가치 경영</a></li>
+                                <li><a href="#">책임경영</a></li>
+                                <li><a href="#">뉴스룸</a></li>
+                                <li><a href="#">보고서 및 정책</a></li>
+                            </ul>
+                            <ul aria-label="브랜드 메뉴">
+                                <li><a href="#">삼양1963</a></li>
+                                <li><a href="#">삼양라면</a></li>
+                                <li><a href="#">불닭볶음면</a></li>
+                                <li><a href="#">맵탱</a></li>
+                                <li><a href="#">펄스랩</a></li>
+                                <li><a href="#">짜짜로니</a></li>
+                                <li><a href="#">탱글</a></li>
+                            </ul>
+                            <ul aria-label="고객지원 메뉴">
+                                <li><a href="#">고객만족센터</a></li>
+                                <li><a href="#">고객문의</a></li>
+                                <li><a href="#">사업제안</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="utility">
                     <img src="./img/icon-search.png" alt="검색">
                     <div class="language-dropdown">
@@ -49,46 +98,64 @@
                 <h2>브랜드</h2>
                 <!-- 탭 메뉴 -->
                 <ul class="tab">
-                    <li><button class="active" type="button">삼양라면</button></li>
+                    <li><button class="active" type="button">삼양 시그니처</button></li>
                     <li><button type="button">불닭볶음면</button></li>
-                    <li><button type="button">짜짜로니</button></li>
-                    <li><button type="button">맵탱</button></li>
-                    <li><button type="button">펄스랩</button></li>
-                    <li><button type="button">탱글</button></li>
+                    <li><button type="button">이색 브랜드</button></li>
+                    <li><button type="button">헬스케어</button></li>
+                    <li><button type="button">스낵</button></li>
                 </ul>
 
                 <div id="tab1" class="tabcontent current">
-                    <div class="product-list">
-                        <a href="">
+                    <div class="product-swiper swiper">
+                        <div class="product-list swiper-wrapper">
+                        <a class="swiper-slide" href="">
                             <div class="product">
-                                <img loading="lazy" decoding="async" src="./img/item.jpg" alt="삼양라면">
+                                <img loading="lazy" decoding="async" src="./img/main-item.jpg" alt="삼양라면">
                                 <p>삼양라면</p>
                             </div>
                         </a>
-                        <a href="">
+                        <a class="swiper-slide" href="">
                             <div class="product">
-                                <img loading="lazy" decoding="async" src="./img/item2.jpg" alt="큰컵 삼양라면">
+                                <img loading="lazy" decoding="async" src="./img/main-item2.jpg" alt="큰컵 삼양라면">
                                 <p>큰컵 삼양라면</p>
                             </div>
                         </a>
-                        <a href="">
+                        <a class="swiper-slide" href="">
                             <div class="product">
-                                <img loading="lazy" decoding="async" src="./img/item3.jpg" alt="삼양라면 매운맛">
+                                <img loading="lazy" decoding="async" src="./img/main-item3.jpg" alt="삼양라면 매운맛">
                                 <p>삼양라면 매운맛</p>
                             </div>
                         </a>
-                        <a href="#">
+                        <a class="swiper-slide" href="#">
                             <div class="product">
-                                <img loading="lazy" decoding="async" src="./img/item4.jpg" alt="큰컵 삼양라면 매운맛">
+                                <img loading="lazy" decoding="async" src="./img/main-item4.jpg" alt="큰컵 삼양라면 매운맛">
                                 <p>큰컵 삼양라면 매운맛</p>
                             </div>
                         </a>
-                        </div>
-                            <a href="#" class="more">
-                                more →
-                            </a>
+                        <a class="swiper-slide" href="#">
+                            <div class="product">
+                                <img loading="lazy" decoding="async" src="./img/main-item5.jpg" alt="삼양 1963">
+                                <p>삼양 1963</p>
+                            </div>
+                        </a>
+                        <a class="swiper-slide" href="#">
+                            <div class="product">
+                                <img loading="lazy" decoding="async" src="./img/main-item6.jpg" alt="삼양1963 큰컵 우지 파개장">
+                                <p>삼양1963 큰컵 우지 파개장</p>
+                            </div>
+                        </a>
+                        <a class="swiper-slide" href="#">
+                            <div class="product">
+                                <img loading="lazy" decoding="async" src="./img/main-item7.jpg" alt="짜짜로니">
+                                <p>짜짜로니</p>
+                            </div>
+                        </a>
                         </div>
                     </div>
+                    <a href="#" class="more">
+                        more →
+                    </a>
+                </div>
         </section>
 
         <section class="video">
@@ -143,42 +210,44 @@
         <section class="news">
             <div>
                 <h2>놓치면 안 되는 소식들</h2>
-                <div class="news-wrap">
-                    <div class="news-item">
+                <div class="news-wrap swiper">
+                    <div class="news-track swiper-wrapper">
+                    <div class="news-item swiper-slide">
                         <a href=""><img loading="lazy" decoding="async" src="./img/news.jpg" alt="뉴스 소식"></a>
                         <span>제품 뉴스</span>
                         <a href=""><h3>삼양식품, 추석 맞아 ‘삼양1963 X 짜르르 우지 선물세트’ 한정 출시… 명절 선물에 재미 더했다</h3></a>
                         <p>2026.08.31</p>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item swiper-slide">
                         <a href=""><img loading="lazy" decoding="async" src="./img/news2.jpg" alt="제품 뉴스"></a>
                         <span>제품 뉴스</span>
                         <a href=""><h3>삼양식품 ‘삼양1963’·’불닭소스’, 레드닷 디자인 어워드 2026 ‘패키징 디자인’ 부문 수상</h3></a>
                         <p>2026.08.25</p>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item swiper-slide">
                         <a href=""><img loading="lazy" decoding="async" src="./img/news3.jpg" alt="기업 뉴스"></a>
                         <span>기업 뉴스</span>
                         <a href=""><h3>삼양식품, 문체부와 K-푸드·한국 관광 잇는다… 태국 'Love Korea 2026' 참가</h3></a>
                         <p>2026.08.21</p>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item swiper-slide">
                         <a href=""><img loading="lazy" decoding="async" src="./img/news4.jpg" alt="제품 뉴스"></a>
                         <span>제품 뉴스</span>
                         <a href=""><h3>삼양식품, 우지로 만든 짜장라면 신제품 '짜르르' 출시</h3></a>
                         <p>2026.07.01</p>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item swiper-slide">
                         <a href=""><img loading="lazy" decoding="async" src="./img/news5.jpg" alt="제품 뉴스"></a>
                         <span>제품 뉴스</span>
                         <a href=""><h3>삼양애니, 페포 공식플랫폼 ‘페포월드닷컴’ 오픈 글로벌 팬 참여형 캐릭터 생태계 구축</h3></a>
                         <p>2026.06.23</p>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item swiper-slide">
                         <a href=""><img loading="lazy" decoding="async" src="./img/news6.jpg" alt="제품 뉴스"></a>
                         <span>제품 뉴스</span>
                         <a href=""><h3>삼양식품, 나흘간 서울 도심 곳곳서 ‘탱글 프로틴 파스타 서포트럭’ 운영</h3></a>
                         <p>2026.06.19</p>
+                    </div>
                     </div>
                 </div>
                 <div class="button">
@@ -234,25 +303,30 @@
         </div>
     </footer>
 
-    <script>
-        const brandCategoryButtons = document.querySelectorAll(".tab button");
+    
 
-        brandCategoryButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                brandCategoryButtons.forEach((item) => {
-                    item.classList.remove("active");
-                });
+<script src="./js/swiper-bundle.min.js"></script>
+<script>
+    // 브랜드 카테고리 탭 버튼
+    const brandCategoryButtons = document.querySelectorAll(".tab button");
 
-                button.classList.add("active");
+    brandCategoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            brandCategoryButtons.forEach((item) => {
+                item.classList.remove("active");
             });
+
+            button.classList.add("active");
         });
-    </script>
+    });
 
-    <script>
-        const brandVideo = document.querySelector(".advertisement video");
-        const videoPlayButton = document.querySelector(".video-play-button");
-        const videoContainer = document.querySelector(".advertisement");
 
+    // 브랜드 영상 재생 및 일시정지
+    const brandVideo = document.querySelector(".advertisement video");
+    const videoPlayButton = document.querySelector(".video-play-button");
+    const videoContainer = document.querySelector(".advertisement");
+
+    if (brandVideo && videoPlayButton && videoContainer) {
         const playBrandVideo = async () => {
             try {
                 await brandVideo.play();
@@ -267,8 +341,13 @@
 
         const updateVideoPlaybackState = () => {
             const isPlaying = !brandVideo.paused && !brandVideo.ended;
+
             videoContainer.classList.toggle("is-playing", isPlaying);
-            videoPlayButton.setAttribute("aria-label", isPlaying ? "영상 일시정지" : "영상 재생");
+
+            videoPlayButton.setAttribute(
+                "aria-label",
+                isPlaying ? "영상 일시정지" : "영상 재생"
+            );
         };
 
         videoPlayButton.addEventListener("click", () => {
@@ -282,6 +361,7 @@
         brandVideo.addEventListener("play", updateVideoPlaybackState);
         brandVideo.addEventListener("pause", updateVideoPlaybackState);
         brandVideo.addEventListener("ended", updateVideoPlaybackState);
+
         brandVideo.addEventListener("click", () => {
             if (brandVideo.paused || brandVideo.ended) {
                 playBrandVideo();
@@ -289,7 +369,33 @@
                 brandVideo.pause();
             }
         });
-    </script>
+
+        updateVideoPlaybackState();
+    }
+
+    new Swiper(".product-swiper", {
+        direction: "horizontal",
+        loop: false,
+        slidesPerView: 4,
+        spaceBetween: 0,
+        speed: 600,
+        grabCursor: true,
+        breakpoints: {
+            0: { slidesPerView: 1 },
+            680: { slidesPerView: 2 },
+            1100: { slidesPerView: 4 },
+        },
+    });
+
+    new Swiper(".news-wrap", {
+        direction: "horizontal",
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        speed: 600,
+        grabCursor: true,
+    });
+</script>
 
 </body>
 </html>
