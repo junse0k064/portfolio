@@ -23,7 +23,10 @@
 }
 
 .outline-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
     min-width: 14rem;
     padding: 1.2rem 1.8rem;
     border: 1px solid #fc5500;

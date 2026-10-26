@@ -101,13 +101,17 @@ h2 {
 /* MORE 버튼 */
 .more {
     width: 14rem;
-    line-height: 5.6rem;
-    display: inline-block;
+    min-height: 5.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
     margin-top: 10rem;
     border: 1px solid #FF6700;
     color: #FF6700;
     font-size: 2.4rem;
     font-weight: 700;
+    line-height: 1;
 }
 
 

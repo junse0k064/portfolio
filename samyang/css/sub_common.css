@@ -82,8 +82,10 @@ header .gnb-dropdown {
         border-width .6s cubic-bezier(.22, 1, .36, 1),
         visibility 0s linear .6s;
 }
-header:hover .gnb-dropdown,
-header:focus-within .gnb-dropdown {
+header:has(.gnb > ul > li > a:hover) .gnb-dropdown,
+header:has(.gnb:focus-within) .gnb-dropdown,
+header:has(.gnb-dropdown:hover) .gnb-dropdown,
+header:has(.gnb-dropdown:focus-within) .gnb-dropdown {
     height: 33rem;
     padding: 1.6rem 0 2rem;
     border-top-width: 1px;
@@ -210,6 +212,8 @@ header:focus-within .gnb-dropdown {
     justify-content: end;
     align-items: center;
     gap: 4rem;
+    position: relative;
+    z-index: 31;
 }
 .utility img {
     cursor: pointer;
@@ -289,7 +293,7 @@ header:focus-within .gnb-dropdown {
 
 footer {
     background-color: #111;
-    font-family: Arial, 'Noto Sans KR', sans-serif;
+    font-family: inherit;
     line-height: 1.6;
 }
 footer .container {

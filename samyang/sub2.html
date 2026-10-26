@@ -8,169 +8,12 @@
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/sub_common.css">
     <link rel="stylesheet" href="./css/sub2_style.css">
+    <link rel="stylesheet" href="./css/top-button.css">
     <script src="./language.js" defer></script>
     <script src="./dropdown.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
-        /* =========================================================
-           TABLET
-        ========================================================= */
-
-        @media (max-width: 1400px) {
-
-            body {
-                min-width: 0;
-            }
-
-            header {
-                width: calc(100% - 8rem);
-            }
-
-            header .gnb ul {
-                gap: 2.5rem;
-            }
-
-            header .gnb-dropdown-inner {
-                column-gap: 2.5rem;
-            }
-
-            header .gnb ul li a {
-                font-size: 1.6rem;
-            }
-
-            .product-grid {
-                column-gap: 2rem;
-            }
-
-        }
-
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
-        @media (max-width: 767px) {
-
-            html {
-                font-size: 62.5%;
-            }
-
-            body {
-                min-width: 0;
-            }
-
-            header {
-                width: calc(100% - 4rem);
-                height: 8rem;
-                padding: 1.8rem 0;
-            }
-
-            header h1 {
-                width: auto;
-            }
-
-            header h1 img {
-                width: 10rem;
-            }
-
-            header .gnb {
-                display: none;
-            }
-
-            header .gnb-dropdown {
-                display: none;
-            }
-
-            .utility {
-                width: auto;
-                gap: 1.2rem;
-            }
-
-            .utility .language {
-                width: 7.5rem;
-                height: 3.8rem;
-            }
-
-            .utility .language span {
-                font-size: 1.4rem;
-            }
-
-            .product-page {
-                padding: 4.5rem 0 6rem;
-            }
-
-            .product-heading {
-                margin-bottom: 3.5rem;
-            }
-
-            .product-heading h2 {
-                font-size: 4rem;
-            }
-
-            .product-heading p {
-                font-size: 1.5rem;
-            }
-
-            .category-list {
-                grid-template-columns: repeat(2, 1fr);
-                margin-bottom: 4rem;
-            }
-
-            .category-list li {
-                height: 4.8rem;
-            }
-
-            .category-list li:nth-child(odd) button {
-                border-right: 0;
-            }
-
-            .category-list li:nth-child(even) button {
-                border-right: 1px solid #d7d7d7;
-            }
-
-            .category-list li:first-child button {
-                border-radius: .3rem 0 0 0;
-            }
-
-            .category-list li:nth-child(2) button {
-                border-radius: 0 .3rem 0 0;
-            }
-
-            .category-list li:nth-last-child(2) button {
-                border-radius: 0 0 0 .3rem;
-            }
-
-            .category-list li:last-child button {
-                border-radius: 0 0 .3rem 0;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 4.5rem 1.5rem;
-            }
-
-            .product-name {
-                font-size: 1.5rem;
-            }
-
-            .product-buttons {
-                grid-template-columns: 1fr;
-            }
-
-            .product-buttons a {
-                height: 3.8rem;
-            }
-
-            .pagination {
-                gap: 1rem;
-                margin-top: 5rem;
-            }
-
-        }
-    </style>
 </head>
-
-<body>
+<body id="top">
 
     <!-- =========================================================
          HEADER
@@ -187,8 +30,8 @@
                 <li><a href="#"><span>제품</span></a></li>
                 <li><a href="./sub3.html"><span>홍보관</span></a></li>
                 <li><a href="./sub4.html"><span>지속가능경영</span></a></li>
-                <li><a href="#"><span>브랜드</span></a></li>
-                <li><a href="#"><span>고객지원</span></a></li>
+                <li><a href="./sub5.html"><span>브랜드</span></a></li>
+                <li><a href="./sub6.html"><span>고객지원</span></a></li>
             </ul>
         </nav>
         <div class="gnb-dropdown">
@@ -693,5 +536,8 @@
         });
     </script>
 
+    <a class="back-to-top" href="#top" aria-label="맨 위로">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
 </body>
 </html>

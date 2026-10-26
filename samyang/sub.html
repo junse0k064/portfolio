@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/sub_common.css">
     <link rel="stylesheet" href="./css/sub1_style.css">
+    <link rel="stylesheet" href="./css/top-button.css">
     <script src="./language.js" defer></script>
     <script src="./dropdown.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
+<body id="top">
     <header>
         <h1><a href="./index.html"><img src="./img/sub-logo.png" fetchpriority="high" alt="삼양식품 로고"></a></h1>
         <nav class="gnb">
@@ -21,8 +22,8 @@
                 <li><a href="./sub2.html"><span>제품</span></a></li>
                 <li><a href="./sub3.html"><span>홍보관</span></a></li>
                 <li><a href="./sub4.html"><span>지속가능경영</span></a></li>
-                <li><a href="#"><span>브랜드</span></a></li>
-                <li><a href="#"><span>고객지원</span></a></li>
+                <li><a href="./sub5.html"><span>브랜드</span></a></li>
+                <li><a href="./sub6.html"><span>고객지원</span></a></li>
             </ul>
         </nav>
         <div class="gnb-dropdown">
@@ -129,7 +130,7 @@
                 <span class="section-label">ABOUT SAMYANG</span>
                 <h2 class="section-title">Better Food,<br>Better <em>Future</em></h2>
                 <p class="section-copy">삼양식품은 맛있는 음식을 넘어 한 끼의 행복을 전합니다. 건강한 식문화와 더 나은 내일을 생각하며, 온 세상이 즐겁게 나누는 K-푸드의 새로운 기준을 만들어 갑니다.</p>
-                <a class="outline-button" href="#">더 알아보기 →</a>
+                <a class="outline-button" href="#">더 알아보기 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
             <img class="intro-image" src="./img/intro.jpg" alt="삼양식품 사옥 전경">
         </div>
@@ -171,7 +172,7 @@
                 <h2 class="section-title">전 세계가 사랑하는 삼양식품</h2>
                 <p class="section-copy">삼양식품의 맛은 이제 세계인의 일상이 되었습니다. 더 많은 사람들에게 K-푸드의 즐거움을 전합니다.</p>
                 <p class="number">100+<span>Countries</span></p>
-                <a class="outline-button" href="#">글로벌 네트워크 보기 →</a>
+                <a class="outline-button" href="#">글로벌 네트워크 보기 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
             <img class="global-map" src="./img/map.jpg" alt="삼양식품 글로벌 네트워크 지도">
         </div>
@@ -184,7 +185,7 @@
                 <h2>삼양식품의 더 맛있는 미래를 만나보세요</h2>
                 <p>맛있는 오늘에 이어, 더 행복한 내일을 만듭니다.</p>
             </div>
-            <a class="outline-button" href="#">바로가기 →</a>
+            <a class="outline-button" href="#">바로가기 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
     </section>
 
@@ -230,5 +231,8 @@
             </div>
         </div>
     </footer>
+    <a class="back-to-top" href="#top" aria-label="맨 위로">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
 </body>
 </html>
