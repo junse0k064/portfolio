@@ -33,7 +33,7 @@ header .gnb {
 }
 header .gnb ul {
     display: grid;
-    grid-template-columns: 7.36rem 3.68rem 5.52rem 11.04rem 5.52rem 7.36rem;
+    grid-template-columns: 7.36rem 5.52rem 11.04rem 5.52rem 3.68rem 7.36rem;
     justify-content: center;
     align-items: center;
     column-gap: 8rem;
@@ -217,6 +217,36 @@ header:has(.gnb-dropdown:focus-within) .gnb-dropdown {
 }
 .utility img {
     cursor: pointer;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.8rem;
+    padding: 0 max(2rem, calc((100% - 120rem) / 2));
+    background: #fff;
+    color: #888;
+    font-size: 1.6rem;
+}
+
+.breadcrumb a {
+    color: #666;
+    transition: color .2s ease;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+    color: #fc5500;
+}
+
+.breadcrumb span {
+    color: #222;
+}
+
+.breadcrumb i {
+    color: #aaa;
+    font-size: 1rem;
 }
 .language-dropdown {
     position: relative;

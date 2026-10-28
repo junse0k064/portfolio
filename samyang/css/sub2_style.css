@@ -90,6 +90,17 @@
     min-width: 0;
 }
 
+.product-card[hidden] {
+    display: none;
+}
+
+.product-empty {
+    padding: 5rem 0;
+    color: #777;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
 .product-image {
     width: 100%;
     aspect-ratio: 1 / .83;

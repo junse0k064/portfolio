@@ -148,6 +148,61 @@
     color: #fc5500;
 }
 
+@media (max-width: 768px) {
+    .sustainability-intro {
+        padding: 5rem 2rem 4.4rem;
+    }
 
+    .sustainability-intro h2 {
+        font-size: 2.4rem;
+    }
 
+    .sustainability-intro p {
+        font-size: 1.4rem;
+    }
 
+    .sustainability-list {
+        gap: 1.6rem;
+        padding: 0 1.6rem;
+    }
+
+    .sustainability-card {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .sustainability-card > img {
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+    }
+
+    .sustainability-card-copy {
+        padding: 2.8rem 1rem 3.2rem;
+    }
+
+    .sustainability-card-copy h3 {
+        font-size: 2.2rem;
+    }
+
+    .sustainability-cta {
+        height: auto;
+        margin-top: 2rem;
+        padding: 3rem 0;
+    }
+
+    .sustainability-cta h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sustainability-cta {
+        height: auto;
+    }
+
+    .sustainability-cta .container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

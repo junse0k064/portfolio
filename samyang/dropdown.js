@@ -7,11 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const alignDropdown = () => {
         const topItems = Array.from(gnb.children);
-        const subColumns = Array.from(dropdown.children);
         const dropdownRect = dropdown.getBoundingClientRect();
+        const subColumns = new Map(
+            Array.from(dropdown.children).map((child) => [
+                child.getAttribute("aria-label"),
+                child,
+            ])
+        );
 
-        topItems.forEach((item, index) => {
-            const column = subColumns[index];
+        topItems.forEach((item) => {
+            const menuLabel = `${item.querySelector("a").textContent.trim()} 메뉴`;
+            const column = subColumns.get(menuLabel);
             if (!column) return;
 
             const rect = item.getBoundingClientRect();

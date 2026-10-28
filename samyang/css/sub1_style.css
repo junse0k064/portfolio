@@ -374,5 +374,69 @@
     color: #fff;
 }
 
+@media (max-width: 900px) {
+    .summary-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.6rem;
+    }
+    .summary-card {
+        width: auto;
+    }
+    .intro-wrap,
+    .global-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.4rem;
+    }
+    .intro-copy,
+    .intro-image,
+    .global-copy,
+    .global-map {
+        width: 100%;
+    }
+    .intro-copy {
+        padding-right: 0;
+    }
+    .history-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem 2rem;
+    }
+    .history-item {
+        width: auto;
+    }
+    .value-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .value-card {
+        width: auto;
+    }
+    .cta-section {
+        height: auto;
+    }
+}
 
-
+@media (max-width: 600px) {
+    .about-section,
+    .value-section {
+        padding: 6rem 0;
+    }
+    .summary-list,
+    .history-list,
+    .value-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .intro-section {
+        padding: 1rem 0 6rem;
+    }
+    .intro-image {
+        height: auto;
+    }
+    .cta-section .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+}
