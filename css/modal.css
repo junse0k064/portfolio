@@ -66,3 +66,28 @@
         .modal-wrap {
             display: none;
         }
+
+        @media (max-width: 767px) {
+            .modal-wrap {
+                padding: 7rem 1.2rem 2rem;
+            }
+            .modal-con {
+                padding: 2rem 1.2rem;
+            }
+            .modal-link {
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            .modal-link a {
+                flex: 1 1 14rem;
+                min-width: 0;
+                padding: 0 1.2rem;
+                line-height: 5rem;
+            }
+            .modal-wrap .btn-close {
+                top: 1.2rem;
+                right: 1.2rem;
+                width: 4.4rem;
+                height: 4.4rem;
+            }
+        }
