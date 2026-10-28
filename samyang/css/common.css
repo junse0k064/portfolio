@@ -18,9 +18,8 @@ header .gnb-area {
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
 }
 header .gnb {
@@ -61,9 +60,9 @@ header .gnb > ul > li > a:hover span::after {
     background-color: #FF5602;
 }
 .gnb-dropdown {
-    position: fixed;
-    top: 10rem;
-    left: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
     width: 100vw;
     box-sizing: border-box;
     height: 0;
@@ -72,13 +71,14 @@ header .gnb > ul > li > a:hover span::after {
     border-bottom: 0 solid #bbb;
     overflow: hidden;
     background: #fff;
+    transform: translateX(-50%);
     visibility: hidden;
     pointer-events: none;
     transition:
         height 0.6s cubic-bezier(.22, 1, .36, 1),
         padding 0.6s cubic-bezier(.22, 1, .36, 1),
         border-width 0.6s cubic-bezier(.22, 1, .36, 1),
-        visibility 0.6s linear 0.6s;
+        visibility 0s linear 0.6s;
 }
 header .gnb-area:has(.gnb > ul > li > a:hover) .gnb-dropdown,
 header .gnb-area:has(.gnb:focus-within) .gnb-dropdown,
@@ -94,7 +94,7 @@ header .gnb-area:has(.gnb-dropdown:focus-within) .gnb-dropdown {
         height 0.6s cubic-bezier(.22, 1, .36, 1),
         padding 0.6s cubic-bezier(.22, 1, .36, 1),
         border-width 0.6s cubic-bezier(.22, 1, .36, 1),
-        visibility 0.6s;
+        visibility 0s;
 }
 
 .gnb-dropdown-inner {
